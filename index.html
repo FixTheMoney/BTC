@@ -77,18 +77,28 @@
         <button class="lang-btn" id="lang-btn">日本語</button>
     </div>
     <h1 style="margin-top: 40vh;">Bitcoin</h1>
+        <h1 id="main-title" style="margin-top: 40vh;">Bitcoin</h1>
+        <div class="link-container">
+            <a id="pow-link" href="pow.html">Learn about Proof of Work</a>
+        </div>
         <script>
             const bannerTitle = document.getElementById('banner-title');
             const langBtn = document.getElementById('lang-btn');
+            const mainTitle = document.getElementById('main-title');
+            const powLink = document.getElementById('pow-link');
             let isEnglish = true;
             langBtn.addEventListener('click', () => {
                 isEnglish = !isEnglish;
                 if (isEnglish) {
                     bannerTitle.textContent = 'Bitcoin';
                     langBtn.textContent = '日本語';
+                    mainTitle.textContent = 'Bitcoin';
+                    powLink.textContent = 'Learn about Proof of Work';
                 } else {
                     bannerTitle.textContent = 'ビットコイン';
                     langBtn.textContent = 'English';
+                    mainTitle.textContent = 'ビットコイン';
+                    powLink.textContent = 'プルーフ・オブ・ワークについて学ぶ';
                 }
             });
         </script>
