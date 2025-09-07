@@ -48,13 +48,11 @@
             justify-content: flex-start;
         }
         .banner-title {
-            flex: none;
+            flex: 1;
         }
         .lang-btn {
-            position: absolute;
-            right: 24px;
-            top: 50%;
-            transform: translateY(-50%);
+            margin-left: auto;
+            margin-right: 2em;
             background: #ffd700;
             color: #222;
             border: none;
@@ -65,6 +63,7 @@
             cursor: pointer;
             box-shadow: 0 1px 4px rgba(0,0,0,0.2);
             transition: background 0.2s;
+            align-self: center;
         }
         .lang-btn:hover {
             background: #fffbe6;
@@ -78,31 +77,52 @@
     </div>
     <div style="margin-top: 40vh;"></div>
     <div class="link-container">
-        <a id="pow-link" href="pow.html">Learn about Proof of Work</a>
-        <br>
-        <a href="history-of-money.html">The History of Money</a><br>
-        <a href="properties-of-money.html">Properties of Money</a><br>
-        <a href="what-happened-in-1971.html">What happened in 1971</a><br>
-        <a href="advent-of-bitcoin.html">The Advent of Bitcoin</a><br>
-        <a href="technology-of-bitcoin.html">The technology that makes Bitcoin work</a><br>
-        <a href="economics-of-bitcoin.html">The economics of Bitcoin</a><br>
-        <a href="why-bitcoin-wins.html">Why Bitcoin wins</a>
+    <a id="pow-link" href="pow.html">Learn about Proof of Work</a>
+    <br>
+    <a id="history-link" href="history-of-money.html">The History of Money</a><br>
+    <a id="properties-link" href="properties-of-money.html">Properties of Money</a><br>
+    <a id="whathappened-link" href="what-happened-in-1971.html">What happened in 1971</a><br>
+    <a id="advent-link" href="advent-of-bitcoin.html">The Advent of Bitcoin</a><br>
+    <a id="tech-link" href="technology-of-bitcoin.html">The technology that makes Bitcoin work</a><br>
+    <a id="economics-link" href="economics-of-bitcoin.html">The economics of Bitcoin</a><br>
+    <a id="why-link" href="why-bitcoin-wins.html">Why Bitcoin wins</a>
     </div>
     <script>
         const bannerTitle = document.getElementById('banner-title');
         const langBtn = document.getElementById('lang-btn');
         const powLink = document.getElementById('pow-link');
         let isEnglish = true;
+        const historyLink = document.getElementById('history-link');
+        const propertiesLink = document.getElementById('properties-link');
+        const whathappenedLink = document.getElementById('whathappened-link');
+        const adventLink = document.getElementById('advent-link');
+        const techLink = document.getElementById('tech-link');
+        const economicsLink = document.getElementById('economics-link');
+        const whyLink = document.getElementById('why-link');
         langBtn.addEventListener('click', () => {
             isEnglish = !isEnglish;
             if (isEnglish) {
                 bannerTitle.textContent = 'Bitcoin';
                 langBtn.textContent = '日本語';
                 powLink.textContent = 'Learn about Proof of Work';
+                historyLink.textContent = 'The History of Money';
+                propertiesLink.textContent = 'Properties of Money';
+                whathappenedLink.textContent = 'What happened in 1971';
+                adventLink.textContent = 'The Advent of Bitcoin';
+                techLink.textContent = 'The technology that makes Bitcoin work';
+                economicsLink.textContent = 'The economics of Bitcoin';
+                whyLink.textContent = 'Why Bitcoin wins';
             } else {
                 bannerTitle.textContent = 'ビットコイン';
                 langBtn.textContent = 'English';
                 powLink.textContent = 'プルーフ・オブ・ワークについて学ぶ';
+                historyLink.textContent = 'お金の歴史';
+                propertiesLink.textContent = 'お金の性質';
+                whathappenedLink.textContent = '1971年に何が起こったか';
+                adventLink.textContent = 'ビットコインの登場';
+                techLink.textContent = 'ビットコインを支える技術';
+                economicsLink.textContent = 'ビットコインの経済学';
+                whyLink.textContent = 'なぜビットコインが勝つのか';
             }
         });
     </script>
