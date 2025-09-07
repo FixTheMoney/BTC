@@ -28,10 +28,26 @@
             font-size: 1.5em;
             text-decoration: underline;
         }
+            .banner {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: rgba(0,0,0,0.85);
+                color: #ffd700;
+                text-align: center;
+                padding: 1em 0;
+                font-size: 2em;
+                font-weight: bold;
+                letter-spacing: 2px;
+                z-index: 1000;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            }
     </style>
 </head>
 <body>
-    <h1>Bitcoin</h1>
+    <div class="banner">Bitcoin</div>
+    <h1 style="margin-top: 40vh;">Bitcoin</h1>
     <div class="link-container">
         <a href="pow.html">Learn about Proof of Work</a>
     </div>
