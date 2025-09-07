@@ -3,8 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <title>The Advent of Bitcoin</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.85);
+            color: #ffd700;
+            text-align: left;
+            padding: 1em 0 1em 2em;
+            font-size: 2em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .banner-title {
+            flex: 1;
+        }
+        .lang-btn {
+            margin-left: auto;
+            margin-right: 2em;
+            background: #ffd700;
+            color: #222;
+            border: none;
+            border-radius: 4px;
+            padding: 0.2em 0.5em;
+            font-size: 0.6em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            transition: background 0.2s;
+            align-self: center;
+        }
+        .lang-btn:hover {
+            background: #fffbe6;
+        }
+        .page-title {
+            margin-top: 100px;
+            text-align: left;
+            padding-left: 2em;
+        }
+    </style>
 </head>
 <body>
-    <h1>The Advent of Bitcoin</h1>
+    <div class="banner">
+        <span class="banner-title" id="banner-title">Bitcoin</span>
+        <button class="lang-btn" id="lang-btn">日本語</button>
+    </div>
+    <h1 class="page-title" id="main-title">The Advent of Bitcoin</h1>
+    <script>
+        const bannerTitle = document.getElementById('banner-title');
+        const langBtn = document.getElementById('lang-btn');
+        const mainTitle = document.getElementById('main-title');
+        let isEnglish = true;
+        langBtn.addEventListener('click', () => {
+            isEnglish = !isEnglish;
+            if (isEnglish) {
+                bannerTitle.textContent = 'Bitcoin';
+                langBtn.textContent = '日本語';
+                mainTitle.textContent = 'The Advent of Bitcoin';
+            } else {
+                bannerTitle.textContent = 'ビットコイン';
+                langBtn.textContent = 'English';
+                mainTitle.textContent = 'ビットコインの登場';
+            }
+        });
+    </script>
 </body>
 </html>
