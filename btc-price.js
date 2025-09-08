@@ -9,17 +9,16 @@ async function fetchBTCPrice() {
     }
 }
 fetchBTCPrice();
-setInterval(fetchBTCPrice, 60000); // Update every
+setInterval(fetchBTCPrice, 60000); // Update every minute
 
-// Fetch current Bitcoin blockheight from blockchain.com
 async function fetchBTCBlockheight() {
     try {
-            const res = await fetch('https://blockchain.info/q/getblockcount');
-            const blockheight = await res.text();
-            document.getElementById('btc-blockheight').textContent = `Block Height: ${blockheight}`;
-        } catch (e) {
-            document.getElementById('btc-blockheight').textContent = 'Block Height: N/A';
-        }
-}        
+        const res = await fetch('https://blockchain.info/q/getblockcount');
+        const blockheight = await res.text();
+        document.getElementById('btc-blockheight').textContent = `Block Height: ${blockheight}`;
+    } catch (e) {
+        document.getElementById('btc-blockheight').textContent = 'Block Height: N/A';
+    }
+}
 fetchBTCBlockheight();
 setInterval(fetchBTCBlockheight, 60000); // Update every minute
