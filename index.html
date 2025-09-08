@@ -68,14 +68,36 @@
         .lang-btn:hover {
             background: #fffbe6;
         }
+        .banner-ticker {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 40vw;
+            margin-left: 0.5em;
+            vertical-align: middle;
+            position: relative;
+        }
+        .banner-ticker span {
+            display: inline-block;
+            margin-right: 2em;
+            font-size: 0.9em;
+            color: #ffd700;
+            animation: ticker-scroll 18s linear infinite;
+        }
+        @keyframes ticker-scroll {
+            0% { transform: translateX(100%);}
+            100% { transform: translateX(-100%);}
+        }
     </style>
 </head>
 <body>
     <div class="banner">
         <span class="banner-title" id="banner-title">Bitcoin</span>
-        <span id="btc-price" style="margin-left:0.5em; font-size:0.9em;"></span>
-        <span id="btc-blockheight" style="margin-left:1em; font-size:0.9em;"></span>
-        <span id="btc-hashrate" style="margin-left:1em; font-size:0.9em;"></span>
+        <div class="banner-ticker">
+            <span id="btc-price"></span>
+            <span id="btc-blockheight"></span>
+            <span id="btc-hashrate"></span>
+        </div>
         <button class="lang-btn" id="lang-btn">日本語</button>
     </div>
     <div style="margin-top: 40vh;"></div>
