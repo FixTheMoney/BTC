@@ -74,6 +74,7 @@
     <div class="banner">
         <span class="banner-title" id="banner-title">Bitcoin</span>
         <span id="btc-price" style="margin-left:0.5em; font-size:0.9em;"></span>
+        <span id="btc-blockheight" style="margin-left:1em; font-size:0.9em;"></span>
         <button class="lang-btn" id="lang-btn">日本語</button>
     </div>
     <div style="margin-top: 40vh;"></div>
@@ -91,6 +92,19 @@
     </div>
     <script src="btc-price.js"></script>
     <script>
+        // Fetch current Bitcoin blockheight from blockchain.com
+        async function fetchBTCBlockheight() {
+            try {
+                const res = await fetch('https://blockchain.info/q/getblockcount');
+                const blockheight = await res.text();
+                document.getElementById('btc-blockheight').textContent = `Block Height: ${blockheight}`;
+            } catch (e) {
+                document.getElementById('btc-blockheight').textContent = 'Block Height: N/A';
+            }
+        }
+        fetchBTCBlockheight();
+        setInterval(fetchBTCBlockheight, 60000); // Update every minute
+
         const bannerTitle = document.getElementById('banner-title');
         const langBtn = document.getElementById('lang-btn');
         const powLink = document.getElementById('pow-link');
