@@ -46,9 +46,15 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
+            height: 3.5em; /* Fixed height to prevent resizing */
         }
         .banner-title {
             margin-right: 0.5em;
+            line-height: 1em;
+            transition: font-size 0.2s;
+        }
+        .banner-title.jp {
+            font-size: 0.8em; /* Smaller font for Japanese */
         }
         .lang-btn {
             flex-shrink: 0;
@@ -139,6 +145,7 @@
             isEnglish = !isEnglish;
             if (isEnglish) {
                 bannerTitle.textContent = 'Bitcoin';
+                bannerTitle.classList.remove('jp');
                 langBtn.textContent = '日本語';
                 powLink.textContent = 'Learn about Proof of Work';
                 historyLink.textContent = 'The History of Money';
@@ -150,6 +157,7 @@
                 whyLink.textContent = 'Why Bitcoin Wins';
             } else {
                 bannerTitle.textContent = 'ビットコイン';
+                bannerTitle.classList.add('jp');
                 langBtn.textContent = 'English';
                 powLink.textContent = 'プルーフ・オブ・ワークについて学ぶ';
                 historyLink.textContent = 'お金の歴史';
