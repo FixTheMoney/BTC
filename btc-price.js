@@ -22,3 +22,17 @@ async function fetchBTCBlockheight() {
 }
 fetchBTCBlockheight();
 setInterval(fetchBTCBlockheight, 60000); // Update every minute
+
+async function fetchBTCHashrate() {
+    try {
+        const res = await fetch('https://blockchain.info/q/hashrate');
+        const hashrateGH = await res.text();
+        // Convert GH/s to EH/s for readability
+        const hashrateEH = (parseFloat(hashrateGH) / 1e9).toFixed(2);
+        document.getElementById('btc-hashrate').textContent = `Hashrate: ${hashrateEH} EH/s`;
+    } catch (e) {
+        document.getElementById('btc-hashrate').textContent = 'Hashrate: N/A';
+    }
+}
+fetchBTCHashrate();
+setInterval(fetchBTCHashrate, 60000); // Update every minute
