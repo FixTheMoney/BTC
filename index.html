@@ -73,6 +73,7 @@
 <body>
     <div class="banner">
         <span class="banner-title" id="banner-title">Bitcoin</span>
+        <span id="btc-price" style="margin-left:2em; font-size:0.7em;"></span>
         <button class="lang-btn" id="lang-btn">日本語</button>
     </div>
     <div style="margin-top: 40vh;"></div>
@@ -89,6 +90,20 @@
     <a id="notes-link" href="notes.html">Notes</a>
     </div>
     <script>
+        // Fetch current Bitcoin price and display in banner
+        async function fetchBTCPrice() {
+            try {
+                const res = await fetch('https://api.coindesk.com/v1/bpi/currentprice/USD.json');
+                const data = await res.json();
+                const price = data.bpi.USD.rate_float.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+                document.getElementById('btc-price').textContent = `BTC Price: ${price}`;
+            } catch (e) {
+                document.getElementById('btc-price').textContent = 'BTC Price: N/A';
+            }
+        }
+        fetchBTCPrice();
+        setInterval(fetchBTCPrice, 60000); // Update every minute
+
         const bannerTitle = document.getElementById('banner-title');
         const langBtn = document.getElementById('lang-btn');
         const powLink = document.getElementById('pow-link');
