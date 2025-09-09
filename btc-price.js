@@ -36,3 +36,16 @@ async function fetchBTCHashrate() {
 }
 fetchBTCHashrate();
 setInterval(fetchBTCHashrate, 60000); // Update every minute
+
+async function fetchRemainingBlocks() {
+    try {
+        const res = await fetch('https://mempool.space/api/v1/difficulty-adjustment');
+        const data = await res.json();
+        document.getElementById('btc-remaining-blocks').textContent =
+            `Blocks Until Difficulty Adjustment: ${data.remainingBlocks}`;
+    } catch (e) {
+        document.getElementById('btc-remaining-blocks').textContent = 'Blocks Until Difficulty Adjustment: N/A';
+    }
+}
+fetchRemainingBlocks();
+setInterval(fetchRemainingBlocks, 60000); // Update every minute
