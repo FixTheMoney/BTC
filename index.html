@@ -45,9 +45,10 @@
             z-index: 1000;
             box-shadow: 0 2px 8px rgba(0,0,0,0.3);
             display: flex;
-            align-items: flex-start; /* Move content to the top */
+            align-items: flex-start;
             justify-content: space-between;
-            height: 1em; /* Keep banner height at 1em */
+            height: 1em;
+            box-sizing: border-box;
         }
         .banner-title {
             margin-right: 1em;
@@ -74,6 +75,11 @@
             transition: background 0.2s;
             align-self: center;
             z-index: 1;
+            max-width: 8em;
+            box-sizing: border-box;
+            /* Prevent overflow */
+            overflow: hidden;
+            white-space: nowrap;
         }
         .lang-btn:hover {
             background: #fffbe6;
@@ -83,11 +89,12 @@
             overflow: hidden;
             white-space: nowrap;
             height: 1.3em;
-            width: 100%; /* Make ticker take all available space between title and button */
+            flex: 1 1 auto;
             margin: 0 1em;
             background: transparent;
             display: block;
             margin-top: -0.1em;
+            min-width: 0;
         }
         .ticker-inner {
             display: inline-block;
