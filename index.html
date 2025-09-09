@@ -133,7 +133,22 @@
         <br><br>
         <a id="notes-link" href="notes.html">Notes</a>
     </div>
+    <div id="qr-container" style="width:100%;text-align:center;margin-top:4em;">
+        <canvas id="btc-qr"></canvas>
+        <div style="color:#ffd700;font-size:1em;margin-top:0.5em;">Lightning Invoice QR</div>
+    </div>
     <script src="btc-price.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+    <script>
+        // Generate QR code for the provided string
+        const qr = new QRious({
+            element: document.getElementById('btc-qr'),
+            value: 'lnbc10u1p5vqq6psp5z5we6khn0fgjms0ahh8wzqxt3asuse9m4x73gj6ypglqjptqztrqpp5c4d78j6hdzvemggd0ngvuy635cfg0e48ra06hupysvw2xky7fxsqdpz2djkuepqw3hjqnpdgf2yxgrpv3j8yetnwvxqyp2xqcqzxrrzjqwqfyedmgp2jdz5cqm72wx2dcwwtd3k6e0uqmjmu79c8t2zf0hexgzzxeyqq28qqqqqqqqqqqqqqq9gq2yrzjqtnpp8ds33zeg5a6cumptreev23g7pwlp39cvcz8jeuurayvrmvdsrw9ysqqq9gqqqqqqqqpqqqqq9sq2g9qyysgq70thrv58exylz4r94v68je54tx903scvv8cl6du54x2zrsjdg9yp3zjl45dfc236d0mqprgsahydz2kzkv5qfytz2x69pl7qtmdklpqqm7ptzr',
+            size: 200,
+            background: 'white',
+            foreground: '#ffd700'
+        });
+    </script>
     <script>
         const bannerTitle = document.getElementById('banner-title');
         const langBtn = document.getElementById('lang-btn');
