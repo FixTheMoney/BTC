@@ -45,9 +45,9 @@
             z-index: 1000;
             box-shadow: 0 2px 8px rgba(0,0,0,0.3);
             display: flex;
-            align-items: center;
-            justify-content: space-between; /* <-- changed from flex-start */
-            height: 1em; /* increased for ticker content */
+            align-items: flex-start; /* Move content to the top */
+            justify-content: space-between;
+            height: 1em; /* Keep banner height at 1em */
         }
         .banner-title {
             margin-right: 1em;
@@ -87,6 +87,8 @@
             margin: 0 1em;
             background: transparent;
             display: block;
+            /* Move ticker up to fit inside the 1em banner */
+            margin-top: -0.5em;
         }
         .ticker-inner {
             display: inline-block;
@@ -99,7 +101,7 @@
             margin-right: 2em;
             font-size: 0.9em;
             color: #ffd700;
-            line-height: 2em;
+            line-height: 1em;
         }
         @keyframes ticker-scroll {
             0% { transform: translateX(100%);}
