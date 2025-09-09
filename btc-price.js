@@ -67,7 +67,7 @@ async function fetchHalvingETA() {
         const eta = new Date(data.etaDate);
         const options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' };
         const formatted = eta.toLocaleString('en-US', options);
-        document.getElementById('btc-halving-eta').textContent = `Next Halving ETA: ${formatted}`;
+        document.getElementById('btc-halving-eta').textContent = `Next Halving ETA: April 2028`;
     } catch (e) {
         document.getElementById('btc-halving-eta').textContent = 'Next Halving ETA: April 2028';
     }
