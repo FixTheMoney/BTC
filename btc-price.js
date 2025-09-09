@@ -52,6 +52,9 @@ setInterval(fetchRemainingBlocks, 60000); // Update every minute
 
 // Display current block reward (fixed at 6.25 BTC for now)
 function displayBlockReward() {
-    document.getElementById('btc-block-reward').textContent = 'Block Reward: 6.25 BTC';
+    const el = document.getElementById('btc-block-reward');
+    if (el) {
+        el.textContent = 'Block Reward: 6.25 BTC';
+    }
 }
 displayBlockReward();
