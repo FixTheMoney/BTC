@@ -91,7 +91,9 @@
             margin-right: 2em;
             font-size: 0.9em;
             color: #ffd700;
+            /* Ensure all spans use the same animation and duration */
             animation: ticker-scroll 18s linear infinite;
+            will-change: transform;
         }
         @keyframes ticker-scroll {
             0% { transform: translateX(100%);}
