@@ -79,20 +79,22 @@
             background: #fffbe6;
         }
         .banner-ticker {
-            flex: 1 1 auto;
-            min-width: 0;
-            margin: 0 1em;
-            vertical-align: middle;
             position: relative;
             overflow: hidden;
             white-space: nowrap;
             height: 2em;
+            width: 60vw; /* or adjust as needed */
+            margin: 0 1em;
+            background: transparent;
+            display: block;
+        }
+        .ticker-inner {
+            display: inline-block;
+            white-space: nowrap;
             animation: ticker-scroll 40s linear infinite;
             will-change: transform;
-            display: flex;
-            align-items: center;
         }
-        .banner-ticker span {
+        .ticker-inner span {
             display: inline-block;
             margin-right: 2em;
             font-size: 0.9em;
@@ -109,12 +111,14 @@
     <div class="banner">
         <span class="banner-title" id="banner-title">Bitcoin</span>
         <div class="banner-ticker">
-            <span id="btc-price"></span>
-            <span id="btc-blockheight"></span>
-            <span id="btc-hashrate"></span>
-            <span id="btc-remaining-blocks"></span>
-            <span id="btc-block-reward"></span>
-            <span id="btc-halving-eta"></span>
+            <div class="ticker-inner">
+                <span id="btc-price"></span>
+                <span id="btc-blockheight"></span>
+                <span id="btc-hashrate"></span>
+                <span id="btc-remaining-blocks"></span>
+                <span id="btc-block-reward"></span>
+                <span id="btc-halving-eta"></span>
+            </div>
         </div>
         <button class="lang-btn" id="lang-btn">日本語</button>
     </div>
