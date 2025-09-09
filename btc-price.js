@@ -58,3 +58,19 @@ function displayBlockReward() {
     }
 }
 displayBlockReward();
+
+async function fetchHalvingETA() {
+    try {
+        const res = await fetch('https://mempool.space/api/v1/halving');
+        const data = await res.json();
+        // Format the date to something readable
+        const eta = new Date(data.etaDate);
+        const options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' };
+        const formatted = eta.toLocaleString('en-US', options);
+        document.getElementById('btc-halving-eta').textContent = `Next Halving ETA: ${formatted}`;
+    } catch (e) {
+        document.getElementById('btc-halving-eta').textContent = 'Next Halving ETA: N/A';
+    }
+}
+fetchHalvingETA();
+setInterval(fetchHalvingETA, 60000); // Update every minute
