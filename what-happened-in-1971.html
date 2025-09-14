@@ -16,18 +16,24 @@
         }
         h1 {
             text-align: center;
-            margin-top: 40vh;
-            font-size: 4em;
+            margin-top: 4em;
+            font-size: 3em;
             text-shadow: 2px 2px 8px #000;
         }
-        .link-container {
-            text-align: left;
-            margin-top: 2em;
-            padding-left: 2em;
+        .content-container {
+            max-width: 900px;
+            margin: 3em auto 2em auto;
+            background: rgba(34,34,34,0.85);
+            padding: 2em 2em 1em 2em;
+            border-radius: 12px;
+            box-shadow: 0 0 20px #000;
         }
-        a {
-            color: #000000;
-            font-size: 1.5em;
+        .back-link {
+            display: block;
+            text-align: center;
+            margin: 2em auto 0 auto;
+            font-size: 1.3em;
+            color: #ffd700;
             text-decoration: underline;
         }
         .banner {
@@ -49,7 +55,6 @@
             justify-content: space-between;
             height: 3em;
             box-sizing: border-box;
-
         }
         .banner-title {
             margin-right: 1em;
@@ -60,13 +65,13 @@
             padding-top: 0.07em;
         }
         .banner-title.jp {
-            font-size: 0.8em; /* Smaller font for Japanese */
+            font-size: 0.8em;
         }
         .lang-btn {
             flex-shrink: 0;
             margin-left: 0.5em;
             margin-right: 0.5em;
-            top: 1em;;
+            top: 1em;
             background: #ffd700;
             color: #222;
             border: none;
@@ -81,7 +86,6 @@
             z-index: 1;
             max-width: 8em;
             box-sizing: border-box;
-            /* Prevent overflow */
             overflow: hidden;
             white-space: nowrap;
         }
@@ -134,90 +138,57 @@
         </div>
         <button class="lang-btn" id="lang-btn">日本語</button>
     </div>
-    <div style="margin-top: 40vh;"></div>
-    <div class="link-container">
-        <!--
-        <a id="pow-link" href="pow.html">Learn about Proof of Work</a>
-        <br><br>
-        -->
-        <a id="history-link" href="history-of-money.html">The History of Money</a>
-        <br><br>
-        <a id="properties-link" href="properties-of-money.html">Properties of Money</a>
-        <br><br>
-        <a id="whathappened-link" href="what-happened-in-1971.html">What happened in 1971</a>
-        <br><br>
-        <a id="advent-link" href="advent-of-bitcoin.html">The Advent of Bitcoin</a>
-        <br><br>
-        <a id="tech-link" href="technology-of-bitcoin.html">The technology that makes Bitcoin work</a>
-        <br><br>
-        <a id="economics-link" href="economics-of-bitcoin.html">The economics of Bitcoin</a>
-        <br><br>
-        <a id="why-link" href="why-bitcoin-wins.html">Why Bitcoin wins</a>
-        <!--
-        <br><br>
-        <a id="notes-link" href="notes.html">Notes</a>
-        -->
+    <div class="content-container">
+        <h1>What Happened in 1971?</h1>
+        <p>
+            In 1971, a pivotal event in global economic history occurred: the United States officially ended the convertibility of the US dollar into gold, effectively taking the world off the gold standard. This moment, known as the "Nixon Shock," marked the beginning of the modern era of fiat money and had profound consequences for economies worldwide.
+        </p>
+        <h2>The Gold Standard and Bretton Woods</h2>
+        <p>
+            After World War II, the Bretton Woods Agreement established a global monetary system where major currencies were pegged to the US dollar, and the dollar itself was convertible to gold at a fixed rate of $35 per ounce. This system provided stability and trust in international trade, as countries could exchange dollars for gold.
+        </p>
+        <h2>Mounting Pressures</h2>
+        <p>
+            By the late 1960s, the US faced growing economic challenges: rising inflation, trade deficits, and increased spending on the Vietnam War and social programs. Other countries began to doubt the US's ability to maintain its gold reserves and started redeeming dollars for gold, draining US gold holdings.
+        </p>
+        <h2>The Nixon Shock</h2>
+        <p>
+            On August 15, 1971, President Richard Nixon announced a series of measures to address the economic crisis. The most significant was the suspension of the dollar's convertibility into gold. This move was intended to be temporary, but it became permanent, ending the Bretton Woods system.
+        </p>
+        <h2>Aftermath and Consequences</h2>
+        <ul>
+            <li><strong>Floating Exchange Rates:</strong> Currencies were no longer pegged to gold or the dollar, leading to the adoption of floating exchange rates.</li>
+            <li><strong>Fiat Money Era:</strong> The US dollar and other currencies became fiat money, backed only by government decree and trust, not by physical commodities.</li>
+            <li><strong>Inflation and Debt:</strong> Governments could now print money without gold constraints, contributing to higher inflation and rising national debts.</li>
+            <li><strong>Global Impact:</strong> The change affected international trade, investment, and monetary policy, reshaping the global financial system.</li>
+        </ul>
+        <h2>Why It Matters</h2>
+        <p>
+            The end of the gold standard in 1971 fundamentally changed how money works. It allowed for greater flexibility in monetary policy but also introduced new risks, such as inflation and currency devaluation. Many critics argue that this shift has contributed to economic instability, wealth inequality, and the erosion of savings.
+        </p>
+        <h2>Legacy</h2>
+        <p>
+            The events of 1971 set the stage for the financial world we live in today. Understanding this history is crucial for anyone interested in economics, finance, or the evolution of money—including the rise of alternatives like Bitcoin.
+        </p>
+        <a class="back-link" href="index.html">← Back to Main Page</a>
     </div>
     <script src="btc-price.js"></script>
-    <!--
-    <div id="qr-container" style="width:100%;text-align:center;margin-top:4em;">
-        <canvas id="btc-qr"></canvas>
-        <div style="color:#000000;font-size:1em;margin-top:0.5em;">Lightning Invoice QR</div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
-    <script>
-        // Generate QR code for the provided string
-        const qr = new QRious({
-            element: document.getElementById('btc-qr'),
-            value: 'lnbc10u1p5vqq6psp5z5we6khn0fgjms0ahh8wzqxt3asuse9m4x73gj6ypglqjptqztrqpp5c4d78j6hdzvemggd0ngvuy635cfg0e48ra06hupysvw2xky7fxsqdpz2djkuepqw3hjqnpdgf2yxgrpv3j8yetnwvxqyp2xqcqzxrrzjqwqfyedmgp2jdz5cqm72wx2dcwwtd3k6e0uqmjmu79c8t2zf0hexgzzxeyqq28qqqqqqqqqqqqqqq9gq2yrzjqtnpp8ds33zeg5a6cumptreev23g7pwlp39cvcz8jeuurayvrmvdsrw9ysqqq9gqqqqqqqqpqqqqq9sq2g9qyysgq70thrv58exylz4r94v68je54tx903scvv8cl6du54x2zrsjdg9yp3zjl45dfc236d0mqprgsahydz2kzkv5qfytz2x69pl7qtmdklpqqm7ptzr',
-            size: 200,
-            background: 'white',
-            foreground: '#000000'
-        });
-    </script>
-    -->
     <script>
         const bannerTitle = document.getElementById('banner-title');
         const langBtn = document.getElementById('lang-btn');
-        // Only define powLink if it exists
-        const powLink = document.getElementById('pow-link');
         let isEnglish = true;
-        const historyLink = document.getElementById('history-link');
-        const propertiesLink = document.getElementById('properties-link');
-        const whathappenedLink = document.getElementById('whathappened-link');
-        const adventLink = document.getElementById('advent-link');
-        const techLink = document.getElementById('tech-link');
-        const economicsLink = document.getElementById('economics-link');
-        const whyLink = document.getElementById('why-link');
         langBtn.addEventListener('click', () => {
             isEnglish = !isEnglish;
             if (isEnglish) {
                 bannerTitle.textContent = 'Bitcoin';
                 bannerTitle.classList.remove('jp');
                 langBtn.textContent = '日本語';
-                if (powLink) powLink.textContent = 'Learn about Proof of Work';
-                historyLink.textContent = 'The History of Money';
-                propertiesLink.textContent = 'Properties of Money';
-                whathappenedLink.textContent = 'What Happened in 1971';
-                adventLink.textContent = 'The Advent of Bitcoin';
-                techLink.textContent = 'The Technology that Makes Bitcoin work';
-                economicsLink.textContent = 'The Economics of Bitcoin';
-                whyLink.textContent = 'Why Bitcoin wins';
             } else {
                 bannerTitle.textContent = 'ビットコイン';
                 bannerTitle.classList.add('jp');
                 langBtn.textContent = 'English';
-                if (powLink) powLink.textContent = 'プルーフ・オブ・ワークについて学ぶ';
-                historyLink.textContent = 'お金の歴史';
-                propertiesLink.textContent = 'お金の性質';
-                whathappenedLink.textContent = '1971年に何が起こったか';
-                adventLink.textContent = 'ビットコインの登場';
-                techLink.textContent = 'ビットコインを支える技術';
-                economicsLink.textContent = 'ビットコインの経済学';
-                whyLink.textContent = 'なぜビットコインが勝つのか';
             }
         });
     </script>
-    <!-- Removed duplicate POW link -->
 </body>
 </html>
