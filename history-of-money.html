@@ -16,18 +16,24 @@
         }
         h1 {
             text-align: center;
-            margin-top: 40vh;
-            font-size: 4em;
+            margin-top: 4em;
+            font-size: 3em;
             text-shadow: 2px 2px 8px #000;
         }
-        .link-container {
-            text-align: left;
-            margin-top: 2em;
-            padding-left: 2em;
+        .content-container {
+            max-width: 900px;
+            margin: 3em auto 2em auto;
+            background: rgba(34,34,34,0.85);
+            padding: 2em 2em 1em 2em;
+            border-radius: 12px;
+            box-shadow: 0 0 20px #000;
         }
-        a {
-            color: #000000;
-            font-size: 1.5em;
+        .back-link {
+            display: block;
+            text-align: center;
+            margin: 2em auto 0 auto;
+            font-size: 1.3em;
+            color: #ffd700;
             text-decoration: underline;
         }
         .banner {
@@ -49,7 +55,6 @@
             justify-content: space-between;
             height: 3em;
             box-sizing: border-box;
-
         }
         .banner-title {
             margin-right: 1em;
@@ -60,13 +65,13 @@
             padding-top: 0.07em;
         }
         .banner-title.jp {
-            font-size: 0.8em; /* Smaller font for Japanese */
+            font-size: 0.8em;
         }
         .lang-btn {
             flex-shrink: 0;
             margin-left: 0.5em;
             margin-right: 0.5em;
-            top: 1em;;
+            top: 1em;
             background: #ffd700;
             color: #222;
             border: none;
@@ -81,7 +86,6 @@
             z-index: 1;
             max-width: 8em;
             box-sizing: border-box;
-            /* Prevent overflow */
             overflow: hidden;
             white-space: nowrap;
         }
@@ -134,90 +138,66 @@
         </div>
         <button class="lang-btn" id="lang-btn">日本語</button>
     </div>
-    <div style="margin-top: 40vh;"></div>
-    <div class="link-container">
-        <!--
-        <a id="pow-link" href="pow.html">Learn about Proof of Work</a>
-        <br><br>
-        -->
-        <a id="history-link" href="history-of-money.html">The History of Money</a>
-        <br><br>
-        <a id="properties-link" href="properties-of-money.html">Properties of Money</a>
-        <br><br>
-        <a id="whathappened-link" href="what-happened-in-1971.html">What happened in 1971</a>
-        <br><br>
-        <a id="advent-link" href="advent-of-bitcoin.html">The Advent of Bitcoin</a>
-        <br><br>
-        <a id="tech-link" href="technology-of-bitcoin.html">The technology that makes Bitcoin work</a>
-        <br><br>
-        <a id="economics-link" href="economics-of-bitcoin.html">The economics of Bitcoin</a>
-        <br><br>
-        <a id="why-link" href="why-bitcoin-wins.html">Why Bitcoin wins</a>
-        <!--
-        <br><br>
-        <a id="notes-link" href="notes.html">Notes</a>
-        -->
+    <div class="content-container">
+        <h1>The History of Money</h1>
+        <p>
+            Money is a fundamental invention that has shaped human civilization for thousands of years. Its history is a story of innovation, trust, and adaptation to the needs of societies.
+        </p>
+        <h2>Barter and Early Exchange</h2>
+        <p>
+            Before money, people relied on barter—directly exchanging goods and services. Barter was limited by the "double coincidence of wants": both parties had to want what the other offered. This inefficiency led to the search for a more universal medium of exchange.
+        </p>
+        <h2>Commodity Money</h2>
+        <p>
+            Societies began using commodities with intrinsic value as money, such as shells, salt, cattle, and grains. These items were widely accepted, durable, and divisible. Over time, metals like copper, silver, and gold became preferred for their portability, durability, and scarcity.
+        </p>
+        <h2>Metallic Money and Coinage</h2>
+        <p>
+            The first coins appeared in Lydia (modern-day Turkey) around 600 BCE, made from electrum, a natural alloy of gold and silver. Coinage standardized weights and purity, making trade easier and more trustworthy. Coins spread rapidly across the ancient world, becoming the backbone of economies from Greece to Rome to China.
+        </p>
+        <h2>Paper Money</h2>
+        <p>
+            Paper money was first used in China during the Tang and Song dynasties (7th–11th centuries CE). Merchants and governments issued promissory notes and bills of exchange, which evolved into government-backed banknotes. Paper money eventually spread to the Middle East and Europe, revolutionizing commerce by making large transactions easier and safer.
+        </p>
+        <h2>Banking and Credit</h2>
+        <p>
+            Medieval Europe saw the rise of banks, which issued notes redeemable for precious metals. The concept of credit expanded, allowing people to borrow and lend money, fueling economic growth and innovation. Central banks emerged to regulate currency and stabilize economies.
+        </p>
+        <h2>Fiat Money</h2>
+        <p>
+            Fiat money is currency that has value because a government declares it legal tender, not because it is backed by a physical commodity. Most modern currencies are fiat money. This system allows governments greater flexibility in managing economies but relies on trust in the issuing authority.
+        </p>
+        <h2>Digital Money and Electronic Payments</h2>
+        <p>
+            The late 20th century saw the rise of digital money—credit cards, electronic transfers, and online banking. These innovations made payments faster and more convenient, but also introduced new risks and dependencies on centralized institutions.
+        </p>
+        <h2>Cryptocurrency and Bitcoin</h2>
+        <p>
+            In 2009, Bitcoin was introduced as the first decentralized digital currency, using blockchain technology and cryptography to enable peer-to-peer transactions without intermediaries. Bitcoin and other cryptocurrencies represent a new chapter in the history of money, challenging traditional financial systems and offering new possibilities for global commerce.
+        </p>
+        <h2>Conclusion</h2>
+        <p>
+            The history of money reflects humanity’s ongoing quest for better ways to trade, save, and build trust. From barter to Bitcoin, money has evolved to meet the changing needs of society, and its future will continue to be shaped by technology, policy, and innovation.
+        </p>
+        <a class="back-link" href="index.html">← Back to Main Page</a>
     </div>
     <script src="btc-price.js"></script>
-    <!--
-    <div id="qr-container" style="width:100%;text-align:center;margin-top:4em;">
-        <canvas id="btc-qr"></canvas>
-        <div style="color:#000000;font-size:1em;margin-top:0.5em;">Lightning Invoice QR</div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
-    <script>
-        // Generate QR code for the provided string
-        const qr = new QRious({
-            element: document.getElementById('btc-qr'),
-            value: 'lnbc10u1p5vqq6psp5z5we6khn0fgjms0ahh8wzqxt3asuse9m4x73gj6ypglqjptqztrqpp5c4d78j6hdzvemggd0ngvuy635cfg0e48ra06hupysvw2xky7fxsqdpz2djkuepqw3hjqnpdgf2yxgrpv3j8yetnwvxqyp2xqcqzxrrzjqwqfyedmgp2jdz5cqm72wx2dcwwtd3k6e0uqmjmu79c8t2zf0hexgzzxeyqq28qqqqqqqqqqqqqqq9gq2yrzjqtnpp8ds33zeg5a6cumptreev23g7pwlp39cvcz8jeuurayvrmvdsrw9ysqqq9gqqqqqqqqpqqqqq9sq2g9qyysgq70thrv58exylz4r94v68je54tx903scvv8cl6du54x2zrsjdg9yp3zjl45dfc236d0mqprgsahydz2kzkv5qfytz2x69pl7qtmdklpqqm7ptzr',
-            size: 200,
-            background: 'white',
-            foreground: '#000000'
-        });
-    </script>
-    -->
     <script>
         const bannerTitle = document.getElementById('banner-title');
         const langBtn = document.getElementById('lang-btn');
-        // Only define powLink if it exists
-        const powLink = document.getElementById('pow-link');
         let isEnglish = true;
-        const historyLink = document.getElementById('history-link');
-        const propertiesLink = document.getElementById('properties-link');
-        const whathappenedLink = document.getElementById('whathappened-link');
-        const adventLink = document.getElementById('advent-link');
-        const techLink = document.getElementById('tech-link');
-        const economicsLink = document.getElementById('economics-link');
-        const whyLink = document.getElementById('why-link');
         langBtn.addEventListener('click', () => {
             isEnglish = !isEnglish;
             if (isEnglish) {
                 bannerTitle.textContent = 'Bitcoin';
                 bannerTitle.classList.remove('jp');
                 langBtn.textContent = '日本語';
-                if (powLink) powLink.textContent = 'Learn about Proof of Work';
-                historyLink.textContent = 'The History of Money';
-                propertiesLink.textContent = 'Properties of Money';
-                whathappenedLink.textContent = 'What Happened in 1971';
-                adventLink.textContent = 'The Advent of Bitcoin';
-                techLink.textContent = 'The Technology that Makes Bitcoin work';
-                economicsLink.textContent = 'The Economics of Bitcoin';
-                whyLink.textContent = 'Why Bitcoin wins';
             } else {
                 bannerTitle.textContent = 'ビットコイン';
                 bannerTitle.classList.add('jp');
                 langBtn.textContent = 'English';
-                if (powLink) powLink.textContent = 'プルーフ・オブ・ワークについて学ぶ';
-                historyLink.textContent = 'お金の歴史';
-                propertiesLink.textContent = 'お金の性質';
-                whathappenedLink.textContent = '1971年に何が起こったか';
-                adventLink.textContent = 'ビットコインの登場';
-                techLink.textContent = 'ビットコインを支える技術';
-                economicsLink.textContent = 'ビットコインの経済学';
-                whyLink.textContent = 'なぜビットコインが勝つのか';
             }
         });
     </script>
-    <!-- Removed duplicate POW link -->
 </body>
 </html>
