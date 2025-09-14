@@ -16,18 +16,24 @@
         }
         h1 {
             text-align: center;
-            margin-top: 40vh;
-            font-size: 4em;
+            margin-top: 4em;
+            font-size: 3em;
             text-shadow: 2px 2px 8px #000;
         }
-        .link-container {
-            text-align: left;
-            margin-top: 2em;
-            padding-left: 2em;
+        .content-container {
+            max-width: 900px;
+            margin: 3em auto 2em auto;
+            background: rgba(34,34,34,0.85);
+            padding: 2em 2em 1em 2em;
+            border-radius: 12px;
+            box-shadow: 0 0 20px #000;
         }
-        a {
-            color: #000000;
-            font-size: 1.5em;
+        .back-link {
+            display: block;
+            text-align: center;
+            margin: 2em auto 0 auto;
+            font-size: 1.3em;
+            color: #ffd700;
             text-decoration: underline;
         }
         .banner {
@@ -49,7 +55,6 @@
             justify-content: space-between;
             height: 3em;
             box-sizing: border-box;
-
         }
         .banner-title {
             margin-right: 1em;
@@ -60,13 +65,13 @@
             padding-top: 0.07em;
         }
         .banner-title.jp {
-            font-size: 0.8em; /* Smaller font for Japanese */
+            font-size: 0.8em;
         }
         .lang-btn {
             flex-shrink: 0;
             margin-left: 0.5em;
             margin-right: 0.5em;
-            top: 1em;;
+            top: 1em;
             background: #ffd700;
             color: #222;
             border: none;
@@ -81,7 +86,6 @@
             z-index: 1;
             max-width: 8em;
             box-sizing: border-box;
-            /* Prevent overflow */
             overflow: hidden;
             white-space: nowrap;
         }
@@ -134,90 +138,59 @@
         </div>
         <button class="lang-btn" id="lang-btn">日本語</button>
     </div>
-    <div style="margin-top: 40vh;"></div>
-    <div class="link-container">
-        <!--
-        <a id="pow-link" href="pow.html">Learn about Proof of Work</a>
-        <br><br>
-        -->
-        <a id="history-link" href="history-of-money.html">The History of Money</a>
-        <br><br>
-        <a id="properties-link" href="properties-of-money.html">Properties of Money</a>
-        <br><br>
-        <a id="whathappened-link" href="what-happened-in-1971.html">What happened in 1971</a>
-        <br><br>
-        <a id="advent-link" href="advent-of-bitcoin.html">The Advent of Bitcoin</a>
-        <br><br>
-        <a id="tech-link" href="technology-of-bitcoin.html">The technology that makes Bitcoin work</a>
-        <br><br>
-        <a id="economics-link" href="economics-of-bitcoin.html">The economics of Bitcoin</a>
-        <br><br>
-        <a id="why-link" href="why-bitcoin-wins.html">Why Bitcoin wins</a>
-        <!--
-        <br><br>
-        <a id="notes-link" href="notes.html">Notes</a>
-        -->
+    <div class="content-container">
+        <h1>The Technology That Makes Bitcoin Work</h1>
+        <p>
+            Bitcoin is powered by a combination of groundbreaking technologies that together enable a secure, decentralized, and censorship-resistant digital currency. The three core pillars of Bitcoin's technology are the blockchain, distributed ledger technology, and the proof of work consensus mechanism.
+        </p>
+        <h2>Blockchain</h2>
+        <p>
+            The blockchain is a public, immutable ledger that records all Bitcoin transactions. It consists of a chain of blocks, each containing a list of transactions, a timestamp, and a reference to the previous block. This structure ensures that once data is recorded, it cannot be altered without redoing all subsequent blocks, making the ledger tamper-resistant.
+        </p>
+        <p>
+            Every participant in the Bitcoin network maintains a copy of the blockchain, which is updated as new blocks are added. This transparency allows anyone to verify transactions and balances, fostering trust without the need for a central authority.
+        </p>
+        <h2>Distributed Ledger Technology</h2>
+        <p>
+            Bitcoin's blockchain is a type of distributed ledger technology (DLT). Unlike traditional ledgers maintained by banks or governments, the Bitcoin ledger is decentralized and replicated across thousands of nodes worldwide. Each node independently validates transactions and blocks, ensuring the integrity and resilience of the network.
+        </p>
+        <p>
+            This distributed nature means there is no single point of failure. Even if some nodes go offline or are compromised, the network continues to operate securely. DLT also makes censorship and manipulation extremely difficult, as no single entity controls the ledger.
+        </p>
+        <h2>Proof of Work</h2>
+        <p>
+            Proof of Work (PoW) is the consensus algorithm that secures the Bitcoin network and enables decentralized agreement on the state of the blockchain. Miners compete to solve complex mathematical puzzles, which requires significant computational power. The first miner to solve the puzzle adds a new block to the blockchain and receives a reward in bitcoins.
+        </p>
+        <p>
+            PoW makes it costly and impractical to attack the network, as altering the blockchain would require controlling more computational power than the rest of the network combined. This mechanism ensures that only valid transactions are recorded and prevents double-spending.
+        </p>
+        <h2>Synergy of Technologies</h2>
+        <p>
+            The combination of blockchain, distributed ledger technology, and proof of work creates a robust system for digital money. Bitcoin's design allows for secure, transparent, and permissionless transactions, laying the foundation for a new era of financial innovation.
+        </p>
+        <h2>Conclusion</h2>
+        <p>
+            Bitcoin's technological breakthroughs have inspired countless other projects and applications. By understanding these core technologies, we gain insight into why Bitcoin is unique and why it continues to shape the future of money and digital trust.
+        </p>
+        <a class="back-link" href="index.html">← Back to Main Page</a>
     </div>
     <script src="btc-price.js"></script>
-    <!--
-    <div id="qr-container" style="width:100%;text-align:center;margin-top:4em;">
-        <canvas id="btc-qr"></canvas>
-        <div style="color:#000000;font-size:1em;margin-top:0.5em;">Lightning Invoice QR</div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
-    <script>
-        // Generate QR code for the provided string
-        const qr = new QRious({
-            element: document.getElementById('btc-qr'),
-            value: 'lnbc10u1p5vqq6psp5z5we6khn0fgjms0ahh8wzqxt3asuse9m4x73gj6ypglqjptqztrqpp5c4d78j6hdzvemggd0ngvuy635cfg0e48ra06hupysvw2xky7fxsqdpz2djkuepqw3hjqnpdgf2yxgrpv3j8yetnwvxqyp2xqcqzxrrzjqwqfyedmgp2jdz5cqm72wx2dcwwtd3k6e0uqmjmu79c8t2zf0hexgzzxeyqq28qqqqqqqqqqqqqqq9gq2yrzjqtnpp8ds33zeg5a6cumptreev23g7pwlp39cvcz8jeuurayvrmvdsrw9ysqqq9gqqqqqqqqpqqqqq9sq2g9qyysgq70thrv58exylz4r94v68je54tx903scvv8cl6du54x2zrsjdg9yp3zjl45dfc236d0mqprgsahydz2kzkv5qfytz2x69pl7qtmdklpqqm7ptzr',
-            size: 200,
-            background: 'white',
-            foreground: '#000000'
-        });
-    </script>
-    -->
     <script>
         const bannerTitle = document.getElementById('banner-title');
         const langBtn = document.getElementById('lang-btn');
-        // Only define powLink if it exists
-        const powLink = document.getElementById('pow-link');
         let isEnglish = true;
-        const historyLink = document.getElementById('history-link');
-        const propertiesLink = document.getElementById('properties-link');
-        const whathappenedLink = document.getElementById('whathappened-link');
-        const adventLink = document.getElementById('advent-link');
-        const techLink = document.getElementById('tech-link');
-        const economicsLink = document.getElementById('economics-link');
-        const whyLink = document.getElementById('why-link');
         langBtn.addEventListener('click', () => {
             isEnglish = !isEnglish;
             if (isEnglish) {
                 bannerTitle.textContent = 'Bitcoin';
                 bannerTitle.classList.remove('jp');
                 langBtn.textContent = '日本語';
-                if (powLink) powLink.textContent = 'Learn about Proof of Work';
-                historyLink.textContent = 'The History of Money';
-                propertiesLink.textContent = 'Properties of Money';
-                whathappenedLink.textContent = 'What Happened in 1971';
-                adventLink.textContent = 'The Advent of Bitcoin';
-                techLink.textContent = 'The Technology that Makes Bitcoin work';
-                economicsLink.textContent = 'The Economics of Bitcoin';
-                whyLink.textContent = 'Why Bitcoin wins';
             } else {
                 bannerTitle.textContent = 'ビットコイン';
                 bannerTitle.classList.add('jp');
                 langBtn.textContent = 'English';
-                if (powLink) powLink.textContent = 'プルーフ・オブ・ワークについて学ぶ';
-                historyLink.textContent = 'お金の歴史';
-                propertiesLink.textContent = 'お金の性質';
-                whathappenedLink.textContent = '1971年に何が起こったか';
-                adventLink.textContent = 'ビットコインの登場';
-                techLink.textContent = 'ビットコインを支える技術';
-                economicsLink.textContent = 'ビットコインの経済学';
-                whyLink.textContent = 'なぜビットコインが勝つのか';
             }
         });
     </script>
-    <!-- Removed duplicate POW link -->
 </body>
 </html>
