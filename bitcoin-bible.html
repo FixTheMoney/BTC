@@ -146,6 +146,18 @@
         .content-section p {
             font-size: 1.5em;
         }
+        .page-title {
+            margin-top: 5em;
+            padding: 1em 2em;
+            text-align: center;
+            color: #000;
+        }
+        .page-title h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: none;
+        }
         table {
             width: 100%;
             margin: 2em;
@@ -185,8 +197,12 @@
         <button class="lang-btn" id="lang-btn">日本語</button>
     </div>
     
+    <div class="page-title">
+        <h1 id="page-title-text">What is Bitcoin?</h1>
+    </div>
+    
     <div class="content-section">
-        <p id="content-text">What is bitcoin? Bitcoin is difficult to describe in very simple terms. It can be different things to different people in different situations. Below, we will describe some of the common use cases and utilities that have emerged in Bitcoins young history.</p>
+        <p id="content-text">Bitcoin is difficult to describe in very simple terms. It can be different things to different people in different situations. Below, we will describe some of the common use cases and utilities that have emerged in Bitcoins young history.</p>
     </div>
     
     <table id="bitcoin-table">
@@ -252,6 +268,7 @@
     <script>
         const bannerTitle = document.getElementById('banner-title');
         const langBtn = document.getElementById('lang-btn');
+        const pageTitleText = document.getElementById('page-title-text');
         const contentText = document.getElementById('content-text');
         const backBtn = document.getElementById('back-btn');
         
@@ -319,7 +336,8 @@
                 bannerTitle.textContent = 'Bitcoin';
                 bannerTitle.classList.remove('jp');
                 langBtn.textContent = '日本語';
-                contentText.textContent = 'What is bitcoin? Bitcoin is difficult to describe in very simple terms. It can be different things to different people in different situations. Below, we will describe some of the common use cases and utilities that have emerged in Bitcoins young history.';
+                pageTitleText.textContent = 'What is Bitcoin?';
+                contentText.textContent = 'Bitcoin is difficult to describe in very simple terms. It can be different things to different people in different situations. Below, we will describe some of the common use cases and utilities that have emerged in Bitcoins young history.';
                 backBtn.textContent = '← Back';
                 
                 // Table headers in English
@@ -381,7 +399,8 @@
                 bannerTitle.textContent = 'Bitcoin';
                 bannerTitle.classList.add('jp');
                 langBtn.textContent = 'English';
-                contentText.textContent = 'ビットコインとは何ですか？ビットコインを非常に簡単な言葉で説明するのは難しいです。それは、異なる状況において、異なる人々にとって異なるものになり得ます。以下では、ビットコインの若い歴史の中で出現した一般的なユースケースとユーティリティのいくつかを説明します。';
+                pageTitleText.textContent = 'ビットコインとは何か？';
+                contentText.textContent = 'ビットコインを非常に簡単な言葉で説明するのは難しいです。それは、異なる状況において、異なる人々にとって異なるものになり得ます。仮想通貨、暗号資産、デジタルゴールド等様々な言葉で表現されてきました。以下ではまず、初級編としてビットコインの若い歴史の中で出現した一般的なユースケースとユーティリティのいくつかを説明します。その後にお金とは何か（中級編）、ビットコインが成しえた進化（上級編）、なぜビットコインなのか（上級編）を解説していければと思います。';
                 backBtn.textContent = '← 戻る';
                 
                 // Table headers in Japanese
