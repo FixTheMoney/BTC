@@ -179,60 +179,60 @@
         <p id="content-text">What is bitcoin? Bitcoin is difficult to describe in very simple terms. It can be different things to different people in different situations. Below, we will describe some of the common use cases and utilities that have emerged in Bitcoins young history.</p>
     </div>
     
-    <table>
+    <table id="bitcoin-table">
         <tr>
-            <td>Case #</td>
-            <td>Who</td>
-            <td>Use Case</td>
-            <td>Utility</td>
+            <td id="header-case">Case #</td>
+            <td id="header-who">Who</td>
+            <td id="header-usecase">Use Case</td>
+            <td id="header-utility">Utility</td>
         </tr>
         <tr>
-            <td>Case 1</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id="case1-num">Case 1</td>
+            <td id="case1-who"></td>
+            <td id="case1-usecase"></td>
+            <td id="case1-utility"></td>
         </tr>
         <tr>
-            <td>Case 2</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id="case2-num">Case 2</td>
+            <td id="case2-who"></td>
+            <td id="case2-usecase"></td>
+            <td id="case2-utility"></td>
         </tr>
         <tr>
-            <td>Case 3</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id="case3-num">Case 3</td>
+            <td id="case3-who"></td>
+            <td id="case3-usecase"></td>
+            <td id="case3-utility"></td>
         </tr>
         <tr>
-            <td>Case 4</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id="case4-num">Case 4</td>
+            <td id="case4-who"></td>
+            <td id="case4-usecase"></td>
+            <td id="case4-utility"></td>
         </tr>
         <tr>
-            <td>Case 5</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id="case5-num">Case 5</td>
+            <td id="case5-who"></td>
+            <td id="case5-usecase"></td>
+            <td id="case5-utility"></td>
         </tr>
         <tr>
-            <td>Case 6</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id="case6-num">Case 6</td>
+            <td id="case6-who"></td>
+            <td id="case6-usecase"></td>
+            <td id="case6-utility"></td>
         </tr>
         <tr>
-            <td>Case 7</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id="case7-num">Case 7</td>
+            <td id="case7-who"></td>
+            <td id="case7-usecase"></td>
+            <td id="case7-utility"></td>
         </tr>
         <tr>
-            <td>Case 8</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td id="case8-num">Case 8</td>
+            <td id="case8-who"></td>
+            <td id="case8-usecase"></td>
+            <td id="case8-utility"></td>
         </tr>
     </table>
     
@@ -244,6 +244,23 @@
         const langBtn = document.getElementById('lang-btn');
         const contentText = document.getElementById('content-text');
         const backBtn = document.getElementById('back-btn');
+        
+        // Table header elements
+        const headerCase = document.getElementById('header-case');
+        const headerWho = document.getElementById('header-who');
+        const headerUsecase = document.getElementById('header-usecase');
+        const headerUtility = document.getElementById('header-utility');
+        
+        // Case number elements
+        const case1Num = document.getElementById('case1-num');
+        const case2Num = document.getElementById('case2-num');
+        const case3Num = document.getElementById('case3-num');
+        const case4Num = document.getElementById('case4-num');
+        const case5Num = document.getElementById('case5-num');
+        const case6Num = document.getElementById('case6-num');
+        const case7Num = document.getElementById('case7-num');
+        const case8Num = document.getElementById('case8-num');
+        
         let isEnglish = true;
 
         langBtn.addEventListener('click', () => {
@@ -254,12 +271,44 @@
                 langBtn.textContent = '日本語';
                 contentText.textContent = 'What is bitcoin? Bitcoin is difficult to describe in very simple terms. It can be different things to different people in different situations. Below, we will describe some of the common use cases and utilities that have emerged in Bitcoins young history.';
                 backBtn.textContent = '← Back';
+                
+                // Table headers in English
+                headerCase.textContent = 'Case #';
+                headerWho.textContent = 'Who';
+                headerUsecase.textContent = 'Use Case';
+                headerUtility.textContent = 'Utility';
+                
+                // Case numbers in English
+                case1Num.textContent = 'Case 1';
+                case2Num.textContent = 'Case 2';
+                case3Num.textContent = 'Case 3';
+                case4Num.textContent = 'Case 4';
+                case5Num.textContent = 'Case 5';
+                case6Num.textContent = 'Case 6';
+                case7Num.textContent = 'Case 7';
+                case8Num.textContent = 'Case 8';
             } else {
                 bannerTitle.textContent = 'Bitcoin';
                 bannerTitle.classList.add('jp');
                 langBtn.textContent = 'English';
                 contentText.textContent = 'ビットコインとは何ですか？ビットコインを非常に簡単な言葉で説明するのは難しいです。それは、異なる状況において、異なる人々にとって異なるものになり得ます。以下では、ビットコインの若い歴史の中で出現した一般的なユースケースとユーティリティのいくつかを説明します。';
                 backBtn.textContent = '← 戻る';
+                
+                // Table headers in Japanese
+                headerCase.textContent = 'ケース番号';
+                headerWho.textContent = '誰';
+                headerUsecase.textContent = '使用例';
+                headerUtility.textContent = '有用性';
+                
+                // Case numbers in Japanese
+                case1Num.textContent = 'ケース1';
+                case2Num.textContent = 'ケース2';
+                case3Num.textContent = 'ケース3';
+                case4Num.textContent = 'ケース4';
+                case5Num.textContent = 'ケース5';
+                case6Num.textContent = 'ケース6';
+                case7Num.textContent = 'ケース7';
+                case8Num.textContent = 'ケース8';
             }
         });
     </script>
