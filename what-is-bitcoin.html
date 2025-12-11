@@ -257,6 +257,15 @@
         .clickable-property:hover {
             color: #004499;
         }
+        .clickable-innovation {
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            color: #cc6600;
+        }
+        .clickable-innovation:hover {
+            color: #994400;
+        }
     </style>
 </head>
 <body>
@@ -306,19 +315,19 @@
             <td id="case3-num">Case 3</td>
             <td id="case3-who">Investors of Authoritarian Regimes</td>
             <td id="case3-usecase">①Speculation<br>②Store of Value<br>③Inflation Hedge<br>④Asset Protection</td>
-            <td id="case3-utility">Volatility<br>Long Term Returns<br><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br><span class="clickable-property" onclick="openPropertiesModal()">●Durability</span><br>★Seizure Resistant</td>
+            <td id="case3-utility">Volatility<br>Long Term Returns<br><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br><span class="clickable-property" onclick="openPropertiesModal()">●Durability</span><br><span class="clickable-innovation" onclick="openInnovationsModal()">★Seizure Resistant</span></td>
         </tr>
         <tr>
             <td id="case4-num">Case 4</td>
             <td id="case4-who">Individuals of Authoritarian Regimes</td>
             <td id="case4-usecase">②Store of Value<br>③Inflation Hedge<br>④Asset Protection<br>⑤Payments</td>
-            <td id="case4-utility">Long Term Returns<br><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br><span class="clickable-property" onclick="openPropertiesModal()">●Durability</span><br>★Seizure Resistant<br>★Censorship Resistant</td>
+            <td id="case4-utility">Long Term Returns<br><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br><span class="clickable-property" onclick="openPropertiesModal()">●Durability</span><br><span class="clickable-innovation" onclick="openInnovationsModal()">★Seizure Resistant</span><br>★Censorship Resistant</td>
         </tr>
         <tr>
             <td id="case5-num">Case 5</td>
             <td id="case5-who">Individuals of Third World Countries</td>
             <td id="case5-usecase">②Store of Value<br>③Inflation Hedge<br>④Asset Protection<br>⑤Payments<br>⑥Financial Infrastructure</td>
-            <td id="case5-utility"><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br><span class="clickable-property" onclick="openPropertiesModal()">●Durability</span><br>★Seizure Resistant<br>★Censorship Resistant<br>★Global<br>★Digital<br>★24-7-365</td>
+            <td id="case5-utility"><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br><span class="clickable-property" onclick="openPropertiesModal()">●Durability</span><br><span class="clickable-innovation" onclick="openInnovationsModal()">★Seizure Resistant</span><br>★Censorship Resistant<br>★Global<br>★Digital<br>★24-7-365</td>
         </tr>
         <tr>
             <td id="case6-num">Case 6</td>
@@ -336,7 +345,7 @@
             <td id="case8-num">Case 8</td>
             <td id="case8-who">War Refugees</td>
             <td id="case8-usecase">④Asset Protection</td>
-            <td id="case8-utility">★Seizure Resistant<br><span class="clickable-property" onclick="openPropertiesModal()">●Portability</span></td>
+            <td id="case8-utility"><span class="clickable-innovation" onclick="openInnovationsModal()">★Seizure Resistant</span><br><span class="clickable-property" onclick="openPropertiesModal()">●Portability</span></td>
         </tr>
     </table>
     
@@ -359,25 +368,60 @@
         </div>
     </div>
     
+    <!-- Modal for Bitcoin Innovations -->
+    <div id="innovations-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal close-innovations">&times;</span>
+            <h2 id="innovations-title">Bitcoin's Innovations</h2>
+            <ul id="innovations-list">
+                <li><strong>Seizure Resistant:</strong> Cannot be confiscated by authorities without private keys</li>
+                <li><strong>Censorship Resistant:</strong> Transactions cannot be blocked or reversed</li>
+                <li><strong>Global:</strong> Accessible anywhere with internet connection</li>
+                <li><strong>Digital:</strong> Native to the internet, no physical form needed</li>
+                <li><strong>24/7/365:</strong> Always available, never closes</li>
+                <li><strong>Permissionless:</strong> Anyone can use without approval</li>
+                <li><strong>Trustless:</strong> No need to trust intermediaries</li>
+                <li><strong>Decentralized:</strong> No single point of control or failure</li>
+            </ul>
+        </div>
+    </div>
+    
     <script src="btc-price.js"></script>
     <script>
-        // Modal functionality
+        // Modal functionality for Properties
         const modal = document.getElementById('properties-modal');
         const closeBtn = document.querySelector('.close-modal');
         const modalTitle = document.getElementById('modal-title');
         const modalList = document.getElementById('modal-list');
         
+        // Modal functionality for Innovations
+        const innovationsModal = document.getElementById('innovations-modal');
+        const closeInnovationsBtn = document.querySelector('.close-innovations');
+        const innovationsTitle = document.getElementById('innovations-title');
+        const innovationsList = document.getElementById('innovations-list');
+        
         function openPropertiesModal() {
             modal.style.display = 'block';
+        }
+        
+        function openInnovationsModal() {
+            innovationsModal.style.display = 'block';
         }
         
         closeBtn.onclick = function() {
             modal.style.display = 'none';
         }
         
+        closeInnovationsBtn.onclick = function() {
+            innovationsModal.style.display = 'none';
+        }
+        
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = 'none';
+            }
+            if (event.target == innovationsModal) {
+                innovationsModal.style.display = 'none';
             }
         }
         
@@ -468,6 +512,19 @@
                     <li><strong>Stability:</strong> Maintains value over time</li>
                 `;
                 
+                // Innovations modal content in English
+                innovationsTitle.textContent = "Bitcoin's Innovations";
+                innovationsList.innerHTML = `
+                    <li><strong>Seizure Resistant:</strong> Cannot be confiscated by authorities without private keys</li>
+                    <li><strong>Censorship Resistant:</strong> Transactions cannot be blocked or reversed</li>
+                    <li><strong>Global:</strong> Accessible anywhere with internet connection</li>
+                    <li><strong>Digital:</strong> Native to the internet, no physical form needed</li>
+                    <li><strong>24/7/365:</strong> Always available, never closes</li>
+                    <li><strong>Permissionless:</strong> Anyone can use without approval</li>
+                    <li><strong>Trustless:</strong> No need to trust intermediaries</li>
+                    <li><strong>Decentralized:</strong> No single point of control or failure</li>
+                `;
+                
                 // Table headers in English
                 headerCase.textContent = 'Case #';
                 headerWho.textContent = 'Who';
@@ -497,17 +554,17 @@
                 // Case 3 in English
                 case3Who.innerHTML = 'Investors of Authoritarian Regimes';
                 case3Usecase.innerHTML = '①Speculation<br>②Store of Value<br>③Inflation Hedge<br>④Asset Protection';
-                case3Utility.innerHTML = 'Volatility<br>Long Term Returns<br><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br><span class="clickable-property" onclick="openPropertiesModal()">●Durability</span><br>★Seizure Resistant';
+                case3Utility.innerHTML = 'Volatility<br>Long Term Returns<br><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br><span class="clickable-property" onclick="openPropertiesModal()">●Durability</span><br><span class="clickable-innovation" onclick="openInnovationsModal()">★Seizure Resistant</span>';
                 
                 // Case 4 in English
                 case4Who.innerHTML = 'Individuals of Authoritarian Regimes';
                 case4Usecase.innerHTML = '②Store of Value<br>③Inflation Hedge<br>④Asset Protection<br>⑤Payments';
-                case4Utility.innerHTML = 'Long Term Returns<br><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br><span class="clickable-property" onclick="openPropertiesModal()">●Durability</span><br>★Seizure Resistant<br>★Censorship Resistant';
+                case4Utility.innerHTML = 'Long Term Returns<br><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br><span class="clickable-property" onclick="openPropertiesModal()">●Durability</span><br><span class="clickable-innovation" onclick="openInnovationsModal()">★Seizure Resistant</span><br>★Censorship Resistant';
                 
                 // Case 5 in English
                 case5Who.innerHTML = 'Individuals of Third World Countries';
                 case5Usecase.innerHTML = '②Store of Value<br>③Inflation Hedge<br>④Asset Protection<br>⑤Payments<br>⑥Financial Infrastructure';
-                case5Utility.innerHTML = '<span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br><span class="clickable-property" onclick="openPropertiesModal()">●Durability</span><br>★Seizure Resistant<br>★Censorship Resistant<br>★Global<br>★Digital<br>★24-7-365';
+                case5Utility.innerHTML = '<span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br><span class="clickable-property" onclick="openPropertiesModal()">●Durability</span><br><span class="clickable-innovation" onclick="openInnovationsModal()">★Seizure Resistant</span><br>★Censorship Resistant<br>★Global<br>★Digital<br>★24-7-365';
                 
                 // Case 6 in English
                 case6Who.innerHTML = 'Disaster Refugees';
@@ -522,7 +579,7 @@
                 // Case 8 in English
                 case8Who.innerHTML = 'War Refugees';
                 case8Usecase.innerHTML = '④Asset Protection';
-                case8Utility.innerHTML = '★Seizure Resistant<br><span class="clickable-property" onclick="openPropertiesModal()">●Portability</span>';
+                case8Utility.innerHTML = '<span class="clickable-innovation" onclick="openInnovationsModal()">★Seizure Resistant</span><br><span class="clickable-property" onclick="openPropertiesModal()">●Portability</span>';
             } else {
                 bannerTitle.textContent = 'Bitcoin';
                 bannerTitle.classList.add('jp');
@@ -541,6 +598,19 @@
                     <li><strong>代替性:</strong> 各単位が交換可能</li>
                     <li><strong>認識可能性:</strong> 識別と検証が容易</li>
                     <li><strong>安定性:</strong> 時間とともに価値を維持</li>
+                `;
+                
+                // Innovations modal content in Japanese
+                innovationsTitle.textContent = 'ビットコインの革新';
+                innovationsList.innerHTML = `
+                    <li><strong>押収不可:</strong> 秘密鍵なしでは当局が没収できない</li>
+                    <li><strong>検閲不可:</strong> 取引をブロックまたは逆転できない</li>
+                    <li><strong>グローバル:</strong> インターネット接続があればどこでもアクセス可能</li>
+                    <li><strong>デジタル:</strong> インターネット固有、物理的形態は不要</li>
+                    <li><strong>24時間365日:</strong> 常に利用可能、閉鎖しない</li>
+                    <li><strong>許可不要:</strong> 承認なしで誰でも使用できる</li>
+                    <li><strong>信頼不要:</strong> 仲介者を信頼する必要がない</li>
+                    <li><strong>分散型:</strong> 単一の管理点や故障点がない</li>
                 `;
                 
                 // Table headers in Japanese
@@ -572,17 +642,17 @@
                 // Case 3 in Japanese
                 case3Who.innerHTML = '独裁・監視国家の投資家';
                 case3Usecase.innerHTML = '①投機目的<br>②価値保存<br>③インフレヘッジ<br>④資産保護';
-                case3Utility.innerHTML = 'ボラティリティ<br>長期リターン<br><span class="clickable-property" onclick="openPropertiesModal()">●希少性</span><br><span class="clickable-property" onclick="openPropertiesModal()">●耐久性</span><br>★押収不可';
+                case3Utility.innerHTML = 'ボラティリティ<br>長期リターン<br><span class="clickable-property" onclick="openPropertiesModal()">●希少性</span><br><span class="clickable-property" onclick="openPropertiesModal()">●耐久性</span><br><span class="clickable-innovation" onclick="openInnovationsModal()">★押収不可</span>';
                 
                 // Case 4 in Japanese
                 case4Who.innerHTML = '独裁・監視国家の一般人';
                 case4Usecase.innerHTML = '②価値保存<br>③インフレヘッジ<br>④資産保護<br>⑤決済';
-                case4Utility.innerHTML = '長期リターン<br><span class="clickable-property" onclick="openPropertiesModal()">●希少性</span><br><span class="clickable-property" onclick="openPropertiesModal()">●耐久性</span><br>★押収不可<br>★検閲不可';
+                case4Utility.innerHTML = '長期リターン<br><span class="clickable-property" onclick="openPropertiesModal()">●希少性</span><br><span class="clickable-property" onclick="openPropertiesModal()">●耐久性</span><br><span class="clickable-innovation" onclick="openInnovationsModal()">★押収不可</span><br>★検閲不可';
                 
                 // Case 5 in Japanese
                 case5Who.innerHTML = '発展途上国の一般人';
                 case5Usecase.innerHTML = '②価値保存<br>③インフレヘッジ<br>④資産保護<br>⑤決済<br>⑥金融インフラ';
-                case5Utility.innerHTML = '<span class="clickable-property" onclick="openPropertiesModal()">●希少性</span><br><span class="clickable-property" onclick="openPropertiesModal()">●耐久性</span><br>★押収不可<br>★検閲不可<br>★Global<br>★Digital<br>★24-7-365';
+                case5Utility.innerHTML = '<span class="clickable-property" onclick="openPropertiesModal()">●希少性</span><br><span class="clickable-property" onclick="openPropertiesModal()">●耐久性</span><br><span class="clickable-innovation" onclick="openInnovationsModal()">★押収不可</span><br>★検閲不可<br>★Global<br>★Digital<br>★24-7-365';
                 
                 // Case 6 in Japanese
                 case6Who.innerHTML = '災害の被災者';
@@ -597,7 +667,7 @@
                 // Case 8 in Japanese
                 case8Who.innerHTML = '戦争国の被災者・難民';
                 case8Usecase.innerHTML = '④資産保護';
-                case8Utility.innerHTML = '★押収不可<br><span class="clickable-property" onclick="openPropertiesModal()">●携帯性</span>';
+                case8Utility.innerHTML = '<span class="clickable-innovation" onclick="openInnovationsModal()">★押収不可</span><br><span class="clickable-property" onclick="openPropertiesModal()">●携帯性</span>';
             }
         });
     </script>
