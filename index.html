@@ -117,6 +117,13 @@
             0% { transform: translateX(10%);}
             100% { transform: translateX(-100%);}
         }
+        /* Hide all links and line breaks that come after the "Bitcoin Bible" link
+           visually while keeping the source HTML intact. This uses the general
+           sibling selector to target following <a> and <br> elements. */
+        .link-container #bible-link ~ a,
+        .link-container #bible-link ~ br {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
