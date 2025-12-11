@@ -147,7 +147,7 @@
         <a id="pow-link" href="pow.html">Learn about Proof of Work</a>
         <br><br>
         -->
-        <a id="bible-link" href="what-is-bitcoin.html">What is Bitcoin?</a>
+        <a id="what-is-link" href="what-is-bitcoin.html">What is Bitcoin?</a>
         <br><br>
         <a id="history-link" href="history-of-money.html">The History of Money</a>
         <br><br>
@@ -191,6 +191,7 @@
         // Only define powLink if it exists
         const powLink = document.getElementById('pow-link');
         let isEnglish = true;
+        const whatisLink = document.getElementById('what-is-link');
         const historyLink = document.getElementById('history-link');
         const propertiesLink = document.getElementById('properties-link');
         const whathappenedLink = document.getElementById('whathappened-link');
@@ -205,6 +206,7 @@
                 bannerTitle.classList.remove('jp');
                 langBtn.textContent = '日本語';
                 if (powLink) powLink.textContent = 'Learn about Proof of Work';
+                whatisLink.textContent = 'What is Bitcoin?';
                 historyLink.textContent = 'The History of Money';
                 propertiesLink.textContent = 'Properties of Money';
                 whathappenedLink.textContent = 'What Happened in 1971';
@@ -217,6 +219,7 @@
                 bannerTitle.classList.add('jp');
                 langBtn.textContent = 'English';
                 if (powLink) powLink.textContent = 'プルーフ・オブ・ワークについて学ぶ';
+                whatisLink.textContent = 'ビットコインとは何か？(初級編)';
                 historyLink.textContent = 'お金の歴史';
                 propertiesLink.textContent = 'お金の性質';
                 whathappenedLink.textContent = '1971年に何が起こったか';
