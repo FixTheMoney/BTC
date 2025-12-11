@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What is Bitcoin?</title>
+    <link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #ffffff;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 40vh;
+            font-size: 4em;
+            text-shadow: 2px 2px 8px #000;
+        }
+        .link-container {
+            text-align: left;
+            margin-top: 2em;
+            padding-left: 2em;
+        }
+        a {
+            color: #000000;
+            font-size: 1.5em;
+            text-decoration: underline;
+        }
+        .banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.85);
+            color: #ffd700;
+            text-align: left;
+            padding: 1em 0 1em 2em;
+            font-size: 2em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            height: 3em;
+            box-sizing: border-box;
+
+        }
+        .banner-title {
+            margin-right: 1em;
+            line-height: 1em;
+            transition: font-size 0.2s;
+            flex-shrink: 0;
+            position: relative;
+            padding-top: 0.07em;
+        }
+        .banner-title.jp {
+            font-size: 0.8em; /* Smaller font for Japanese */
+        }
+        .lang-btn {
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+            top: 1em;;
+            background: #ffd700;
+            color: #222;
+            border: none;
+            border-radius: 4px;
+            padding: 0.2em 0.5em;
+            font-size: 0.6em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            transition: background 0.2s;
+            align-self: center;
+            z-index: 1;
+            max-width: 8em;
+            box-sizing: border-box;
+            /* Prevent overflow */
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .lang-btn:hover {
+            background: #fffbe6;
+        }
+        .banner-ticker {
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            height: 1.5em;
+            flex: 1 1 auto;
+            margin: 0 1em;
+            background: transparent;
+            display: block;
+            padding-top: 0.07em;
+            min-width: 0;
+        }
+        .ticker-inner {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker-scroll 40s linear infinite;
+            will-change: transform;
+        }
+        .ticker-inner span {
+            display: inline-block;
+            margin-right: 2em;
+            font-size: 0.9em;
+            color: #ffd700;
+            line-height: 1em;
+        }
+        @keyframes ticker-scroll {
+            0% { transform: translateX(10%);}
+            100% { transform: translateX(-100%);}
+        }
+        .back-btn {
+            position: fixed;
+            bottom: 2em;
+            left: 2em;
+            background: #ffd700;
+            color: #222;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5em 1em;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-btn:hover {
+            background: #fffbe6;
+        }
+        .content-section {
+            margin-top: 1em;
+            padding: 1em 2em;
+            margin-bottom: 0;
+            color: #000;
+            line-height: 1.6;
+            text-align: left;
+        }
+        .content-section p {
+            font-size: 1.5em;
+            margin-bottom: 0;
+        }
+        .page-title {
+            margin-top: 6em;
+            padding: 1em 2em 0.5em 2em;
+            text-align: center;
+            color: #000;
+        }
+        .page-title h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: none;
+        }
+        table {
+            width: calc(100% - 4em);
+            margin: 1em 2em 2em 2em;
+            margin-bottom: 10em;
+            border-collapse: collapse;
+            color: #000;
+        }
+        table td {
+            border: 1px solid #000;
+            padding: 1em;
+            font-size: 1.2em;
+        }
+        table td:first-child {
+            width: 8%;
+            background-color: #ffcc99;
+        }
+        table td:nth-child(2) {
+            width: 20%;
+        }
+        table td:nth-child(3) {
+            width: 20%;
+        }
+        table td:nth-child(4) {
+            width: 20%;
+        }
+        table tr:first-child td {
+            background-color: #ffcc99;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <span class="banner-title" id="banner-title">Bitcoin</span>
+        <div class="banner-ticker">
+            <div class="ticker-inner">
+                <span id="btc-price"></span>
+                <span id="btc-blockheight"></span>
+                <span id="btc-hashrate"></span>
+                <span id="btc-remaining-blocks"></span>
+                <span id="btc-block-reward"></span>
+                <span id="btc-halving-eta"></span>
+            </div>
+        </div>
+        <button class="lang-btn" id="lang-btn">日本語</button>
+    </div>
+    
+    <div class="page-title">
+        <h1 id="page-title-text">What is Bitcoin?</h1>
+    </div>
+    
+    <div class="content-section">
+        <p id="content-text">Bitcoin is difficult to describe in very simple terms. It can be different things to different people in different situations. Below, we will describe some of the common use cases and utilities that have emerged in Bitcoins young history.</p>
+    </div>
+    
+    <table id="bitcoin-table">
+        <tr>
+            <td id="header-case">Case #</td>
+            <td id="header-who">Who</td>
+            <td id="header-usecase">Use Case</td>
+            <td id="header-utility">Utility</td>
+        </tr>
+        <tr>
+            <td id="case1-num">Case 1</td>
+            <td id="case1-who">Investors of Developed Countries</td>
+            <td id="case1-usecase">①Speculation</td>
+            <td id="case1-utility">Volatility</td>
+        </tr>
+        <tr>
+            <td id="case2-num">Case 2</td>
+            <td id="case2-who">Individuals of Developed Countries</td>
+            <td id="case2-usecase">②Store of Value<br>③Inflation Hedge</td>
+            <td id="case2-utility">Long Term Returns<br>●Scarcity<br>●Durability</td>
+        </tr>
+        <tr>
+            <td id="case3-num">Case 3</td>
+            <td id="case3-who">Investors of Authoritarian Regimes</td>
+            <td id="case3-usecase">①Speculation<br>②Store of Value<br>③Inflation Hedge<br>④Asset Protection</td>
+            <td id="case3-utility">Volatility<br>Long Term Returns<br>●Scarcity<br>●Durability<br>★Seizure Resistant</td>
+        </tr>
+        <tr>
+            <td id="case4-num">Case 4</td>
+            <td id="case4-who">Individuals of Authoritarian Regimes</td>
+            <td id="case4-usecase">②Store of Value<br>③Inflation Hedge<br>④Asset Protection<br>⑤Payments</td>
+            <td id="case4-utility">Long Term Returns<br>●Scarcity<br>●Durability<br>★Seizure Resistant<br>★Censorship Resistant</td>
+        </tr>
+        <tr>
+            <td id="case5-num">Case 5</td>
+            <td id="case5-who">Individuals of Third World Countries</td>
+            <td id="case5-usecase">②Store of Value<br>③Inflation Hedge<br>④Asset Protection<br>⑤Payments<br>⑥Financial Infrastructure</td>
+            <td id="case5-utility">●Scarcity<br>●Durability<br>★Seizure Resistant<br>★Censorship Resistant<br>★Global<br>★Digital<br>★24-7-365</td>
+        </tr>
+        <tr>
+            <td id="case6-num">Case 6</td>
+            <td id="case6-who">Disaster Refugees</td>
+            <td id="case6-usecase">⑤Payments<br>⑥Financial Infrastructure<br>⑦Donations</td>
+            <td id="case6-utility">★Global<br>★Digital<br>★24-7-365<br>●Fungibility</td>
+        </tr>
+        <tr>
+            <td id="case7-num">Case 7</td>
+            <td id="case7-who">Protesters and Activists</td>
+            <td id="case7-usecase">⑤Payments<br>⑥Financial Infrastructure<br>⑦Donations</td>
+            <td id="case7-utility">★Global<br>★Digital<br>★24-7-365<br>●Fungibility<br>★Censorship Resistant</td>
+        </tr>
+        <tr>
+            <td id="case8-num">Case 8</td>
+            <td id="case8-who">War Refugees</td>
+            <td id="case8-usecase">④Asset Protection</td>
+            <td id="case8-utility">★Seizure Resistant<br>●Portability</td>
+        </tr>
+    </table>
+    
+    <a href="index.html" class="back-btn" id="back-btn">← Back</a>
+    
+    <script src="btc-price.js"></script>
+    <script>
+        const bannerTitle = document.getElementById('banner-title');
+        const langBtn = document.getElementById('lang-btn');
+        const pageTitleText = document.getElementById('page-title-text');
+        const contentText = document.getElementById('content-text');
+        const backBtn = document.getElementById('back-btn');
+        
+        // Table header elements
+        const headerCase = document.getElementById('header-case');
+        const headerWho = document.getElementById('header-who');
+        const headerUsecase = document.getElementById('header-usecase');
+        const headerUtility = document.getElementById('header-utility');
+        
+        // Case number elements
+        const case1Num = document.getElementById('case1-num');
+        const case2Num = document.getElementById('case2-num');
+        const case3Num = document.getElementById('case3-num');
+        const case4Num = document.getElementById('case4-num');
+        const case5Num = document.getElementById('case5-num');
+        const case6Num = document.getElementById('case6-num');
+        const case7Num = document.getElementById('case7-num');
+        const case8Num = document.getElementById('case8-num');
+        
+        // Case 1 elements
+        const case1Who = document.getElementById('case1-who');
+        const case1Usecase = document.getElementById('case1-usecase');
+        const case1Utility = document.getElementById('case1-utility');
+        
+        // Case 2 elements
+        const case2Who = document.getElementById('case2-who');
+        const case2Usecase = document.getElementById('case2-usecase');
+        const case2Utility = document.getElementById('case2-utility');
+        
+        // Case 3 elements
+        const case3Who = document.getElementById('case3-who');
+        const case3Usecase = document.getElementById('case3-usecase');
+        const case3Utility = document.getElementById('case3-utility');
+        
+        // Case 4 elements
+        const case4Who = document.getElementById('case4-who');
+        const case4Usecase = document.getElementById('case4-usecase');
+        const case4Utility = document.getElementById('case4-utility');
+        
+        // Case 5 elements
+        const case5Who = document.getElementById('case5-who');
+        const case5Usecase = document.getElementById('case5-usecase');
+        const case5Utility = document.getElementById('case5-utility');
+        
+        // Case 6 elements
+        const case6Who = document.getElementById('case6-who');
+        const case6Usecase = document.getElementById('case6-usecase');
+        const case6Utility = document.getElementById('case6-utility');
+        
+        // Case 7 elements
+        const case7Who = document.getElementById('case7-who');
+        const case7Usecase = document.getElementById('case7-usecase');
+        const case7Utility = document.getElementById('case7-utility');
+        
+        // Case 8 elements
+        const case8Who = document.getElementById('case8-who');
+        const case8Usecase = document.getElementById('case8-usecase');
+        const case8Utility = document.getElementById('case8-utility');
+        
+        let isEnglish = true;
+
+        langBtn.addEventListener('click', () => {
+            isEnglish = !isEnglish;
+            if (isEnglish) {
+                bannerTitle.textContent = 'Bitcoin';
+                bannerTitle.classList.remove('jp');
+                langBtn.textContent = '日本語';
+                pageTitleText.textContent = 'What is Bitcoin?';
+                contentText.textContent = 'Bitcoin is difficult to describe in very simple terms. It can be different things to different people in different situations. Below, we will describe some of the common use cases and utilities that have emerged in Bitcoins young history.';
+                backBtn.textContent = '← Back';
+                
+                // Table headers in English
+                headerCase.textContent = 'Case #';
+                headerWho.textContent = 'Who';
+                headerUsecase.textContent = 'Use Case';
+                headerUtility.textContent = 'Utility';
+                
+                // Case numbers in English
+                case1Num.textContent = 'Case 1';
+                case2Num.textContent = 'Case 2';
+                case3Num.textContent = 'Case 3';
+                case4Num.textContent = 'Case 4';
+                case5Num.textContent = 'Case 5';
+                case6Num.textContent = 'Case 6';
+                case7Num.textContent = 'Case 7';
+                case8Num.textContent = 'Case 8';
+                
+                // Case 1 in English
+                case1Who.innerHTML = 'Investors of Developed Countries';
+                case1Usecase.innerHTML = '①Speculation';
+                case1Utility.innerHTML = 'Volatility';
+                
+                // Case 2 in English
+                case2Who.innerHTML = 'Individuals of Developed Countries';
+                case2Usecase.innerHTML = '②Store of Value<br>③Inflation Hedge';
+                case2Utility.innerHTML = 'Long Term Returns<br>●Scarcity<br>●Durability';
+                
+                // Case 3 in English
+                case3Who.innerHTML = 'Investors of Authoritarian Regimes';
+                case3Usecase.innerHTML = '①Speculation<br>②Store of Value<br>③Inflation Hedge<br>④Asset Protection';
+                case3Utility.innerHTML = 'Volatility<br>Long Term Returns<br>●Scarcity<br>●Durability<br>★Seizure Resistant';
+                
+                // Case 4 in English
+                case4Who.innerHTML = 'Individuals of Authoritarian Regimes';
+                case4Usecase.innerHTML = '②Store of Value<br>③Inflation Hedge<br>④Asset Protection<br>⑤Payments';
+                case4Utility.innerHTML = 'Long Term Returns<br>●Scarcity<br>●Durability<br>★Seizure Resistant<br>★Censorship Resistant';
+                
+                // Case 5 in English
+                case5Who.innerHTML = 'Individuals of Third World Countries';
+                case5Usecase.innerHTML = '②Store of Value<br>③Inflation Hedge<br>④Asset Protection<br>⑤Payments<br>⑥Financial Infrastructure';
+                case5Utility.innerHTML = '●Scarcity<br>●Durability<br>★Seizure Resistant<br>★Censorship Resistant<br>★Global<br>★Digital<br>★24-7-365';
+                
+                // Case 6 in English
+                case6Who.innerHTML = 'Disaster Refugees';
+                case6Usecase.innerHTML = '⑤Payments<br>⑥Financial Infrastructure<br>⑦Donations';
+                case6Utility.innerHTML = '★Global<br>★Digital<br>★24-7-365<br>●Fungibility';
+                
+                // Case 7 in English
+                case7Who.innerHTML = 'Protesters and Activists';
+                case7Usecase.innerHTML = '⑤Payments<br>⑥Financial Infrastructure<br>⑦Donations';
+                case7Utility.innerHTML = '★Global<br>★Digital<br>★24-7-365<br>●Fungibility<br>★Censorship Resistant';
+                
+                // Case 8 in English
+                case8Who.innerHTML = 'War Refugees';
+                case8Usecase.innerHTML = '④Asset Protection';
+                case8Utility.innerHTML = '★Seizure Resistant<br>●Portability';
+            } else {
+                bannerTitle.textContent = 'Bitcoin';
+                bannerTitle.classList.add('jp');
+                langBtn.textContent = 'English';
+                pageTitleText.textContent = 'ビットコインとは何か？(初級編)';
+                contentText.innerHTML = 'ビットコインを非常に簡単な言葉で説明するのは難しいです。それは、異なる状況において、異なる人々にとって異なるものになり得ます。仮想通貨、暗号資産、デジタルゴールド等様々な言葉で表現されてきました。以下ではまず、初級編としてビットコインの若い歴史の中で出現した一般的なユースケースとユーティリティのいくつかを説明します。その後にお金とは何か（中級編）、ビットコインが成しえた進化（上級編）、なぜビットコインなのか（上級編）を解説していいきます。<br>●は本来のお金に求める性質、★はビットコインが成しえた進化を指します。';
+                backBtn.textContent = '← 戻る';
+                
+                // Table headers in Japanese
+                headerCase.textContent = 'ケース番号';
+                headerWho.textContent = '基本的な利用者';
+                headerUsecase.textContent = '目的・ユーズケース';
+                headerUtility.textContent = '求められる機能';
+                
+                // Case numbers in Japanese
+                case1Num.textContent = 'ケース1';
+                case2Num.textContent = 'ケース2';
+                case3Num.textContent = 'ケース3';
+                case4Num.textContent = 'ケース4';
+                case5Num.textContent = 'ケース5';
+                case6Num.textContent = 'ケース6';
+                case7Num.textContent = 'ケース7';
+                case8Num.textContent = 'ケース8';
+                
+                // Case 1 in Japanese
+                case1Who.innerHTML = '先進国の投資家';
+                case1Usecase.innerHTML = '①投機目的';
+                case1Utility.innerHTML = 'ボラティリティ';
+                
+                // Case 2 in Japanese
+                case2Who.innerHTML = '先進国の一般人';
+                case2Usecase.innerHTML = '②価値保存<br>③インフレヘッジ';
+                case2Utility.innerHTML = '長期リターン<br>●希少性<br>●耐久性';
+                
+                // Case 3 in Japanese
+                case3Who.innerHTML = '独裁・監視国家の投資家';
+                case3Usecase.innerHTML = '①投機目的<br>②価値保存<br>③インフレヘッジ<br>④資産保護';
+                case3Utility.innerHTML = 'ボラティリティ<br>長期リターン<br>●希少性<br>●耐久性<br>★押収不可';
+                
+                // Case 4 in Japanese
+                case4Who.innerHTML = '独裁・監視国家の一般人';
+                case4Usecase.innerHTML = '②価値保存<br>③インフレヘッジ<br>④資産保護<br>⑤決済';
+                case4Utility.innerHTML = '長期リターン<br>●希少性<br>●耐久性<br>★押収不可<br>★検閲不可';
+                
+                // Case 5 in Japanese
+                case5Who.innerHTML = '発展途上国の一般人';
+                case5Usecase.innerHTML = '②価値保存<br>③インフレヘッジ<br>④資産保護<br>⑤決済<br>⑥金融インフラ';
+                case5Utility.innerHTML = '●希少性<br>●耐久性<br>★押収不可<br>★検閲不可<br>★Global<br>★Digital<br>★24-7-365';
+                
+                // Case 6 in Japanese
+                case6Who.innerHTML = '災害の被災者';
+                case6Usecase.innerHTML = '⑤決済<br>⑥金融インフラ<br>⑦募金';
+                case6Utility.innerHTML = '★Global<br>★Digital<br>★24-7-365<br>●代替性';
+                
+                // Case 7 in Japanese
+                case7Who.innerHTML = '反対運動・デモ団体';
+                case7Usecase.innerHTML = '⑤決済<br>⑥金融インフラ<br>⑦募金';
+                case7Utility.innerHTML = '★Global<br>★Digital<br>★24-7-365<br>●代替性<br>★検閲不可';
+                
+                // Case 8 in Japanese
+                case8Who.innerHTML = '戦争国の被災者・難民';
+                case8Usecase.innerHTML = '④資産保護';
+                case8Utility.innerHTML = '★押収不可<br>●携帯性';
+            }
+        });
+    </script>
+</body>
+</html>
