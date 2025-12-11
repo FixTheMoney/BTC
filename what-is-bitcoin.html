@@ -188,6 +188,75 @@
         table tr:first-child td {
             background-color: #ffcc99;
         }
+        /* Modal/Popup styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            overflow: auto;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 2em;
+            border: 2px solid #888;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 700px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            color: #000;
+        }
+        .modal-content h2 {
+            margin-top: 0;
+            color: #000;
+            font-size: 2em;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 0.5em;
+        }
+        .modal-content ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+        .modal-content ul li {
+            margin-bottom: 0.8em;
+            padding-left: 1.5em;
+            position: relative;
+        }
+        .modal-content ul li:before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-weight: bold;
+        }
+        .close-modal {
+            color: #aaa;
+            float: right;
+            font-size: 2.5em;
+            font-weight: bold;
+            line-height: 0.8;
+            cursor: pointer;
+        }
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #000;
+        }
+        .clickable-property {
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            color: #0066cc;
+        }
+        .clickable-property:hover {
+            color: #004499;
+        }
     </style>
 </head>
 <body>
@@ -231,25 +300,25 @@
             <td id="case2-num">Case 2</td>
             <td id="case2-who">Individuals of Developed Countries</td>
             <td id="case2-usecase">②Store of Value<br>③Inflation Hedge</td>
-            <td id="case2-utility">Long Term Returns<br>●Scarcity<br>●Durability</td>
+            <td id="case2-utility">Long Term Returns<br><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br>●Durability</td>
         </tr>
         <tr>
             <td id="case3-num">Case 3</td>
             <td id="case3-who">Investors of Authoritarian Regimes</td>
             <td id="case3-usecase">①Speculation<br>②Store of Value<br>③Inflation Hedge<br>④Asset Protection</td>
-            <td id="case3-utility">Volatility<br>Long Term Returns<br>●Scarcity<br>●Durability<br>★Seizure Resistant</td>
+            <td id="case3-utility">Volatility<br>Long Term Returns<br><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br>●Durability<br>★Seizure Resistant</td>
         </tr>
         <tr>
             <td id="case4-num">Case 4</td>
             <td id="case4-who">Individuals of Authoritarian Regimes</td>
             <td id="case4-usecase">②Store of Value<br>③Inflation Hedge<br>④Asset Protection<br>⑤Payments</td>
-            <td id="case4-utility">Long Term Returns<br>●Scarcity<br>●Durability<br>★Seizure Resistant<br>★Censorship Resistant</td>
+            <td id="case4-utility">Long Term Returns<br><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br>●Durability<br>★Seizure Resistant<br>★Censorship Resistant</td>
         </tr>
         <tr>
             <td id="case5-num">Case 5</td>
             <td id="case5-who">Individuals of Third World Countries</td>
             <td id="case5-usecase">②Store of Value<br>③Inflation Hedge<br>④Asset Protection<br>⑤Payments<br>⑥Financial Infrastructure</td>
-            <td id="case5-utility">●Scarcity<br>●Durability<br>★Seizure Resistant<br>★Censorship Resistant<br>★Global<br>★Digital<br>★24-7-365</td>
+            <td id="case5-utility"><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br>●Durability<br>★Seizure Resistant<br>★Censorship Resistant<br>★Global<br>★Digital<br>★24-7-365</td>
         </tr>
         <tr>
             <td id="case6-num">Case 6</td>
@@ -273,8 +342,46 @@
     
     <a href="index.html" class="back-btn" id="back-btn">← Back</a>
     
+    <!-- Modal for Properties of Money -->
+    <div id="properties-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Desirable Properties of Money</h2>
+            <ul id="modal-list">
+                <li><strong>Scarcity:</strong> Limited supply to maintain value</li>
+                <li><strong>Durability:</strong> Ability to withstand repeated use</li>
+                <li><strong>Portability:</strong> Easy to transport and transfer</li>
+                <li><strong>Divisibility:</strong> Can be divided into smaller units</li>
+                <li><strong>Fungibility:</strong> Each unit is interchangeable</li>
+                <li><strong>Recognizability:</strong> Easy to identify and verify</li>
+                <li><strong>Stability:</strong> Maintains value over time</li>
+            </ul>
+        </div>
+    </div>
+    
     <script src="btc-price.js"></script>
     <script>
+        // Modal functionality
+        const modal = document.getElementById('properties-modal');
+        const closeBtn = document.querySelector('.close-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalList = document.getElementById('modal-list');
+        
+        function openPropertiesModal() {
+            modal.style.display = 'block';
+        }
+        
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
+        // Language toggle and existing functionality
         const bannerTitle = document.getElementById('banner-title');
         const langBtn = document.getElementById('lang-btn');
         const pageTitleText = document.getElementById('page-title-text');
@@ -349,6 +456,18 @@
                 contentText.textContent = 'Bitcoin is difficult to describe in very simple terms. It can be different things to different people in different situations. Below, we will describe some of the common use cases and utilities that have emerged in Bitcoins young history.';
                 backBtn.textContent = '← Back';
                 
+                // Modal content in English
+                modalTitle.textContent = 'Desirable Properties of Money';
+                modalList.innerHTML = `
+                    <li><strong>Scarcity:</strong> Limited supply to maintain value</li>
+                    <li><strong>Durability:</strong> Ability to withstand repeated use</li>
+                    <li><strong>Portability:</strong> Easy to transport and transfer</li>
+                    <li><strong>Divisibility:</strong> Can be divided into smaller units</li>
+                    <li><strong>Fungibility:</strong> Each unit is interchangeable</li>
+                    <li><strong>Recognizability:</strong> Easy to identify and verify</li>
+                    <li><strong>Stability:</strong> Maintains value over time</li>
+                `;
+                
                 // Table headers in English
                 headerCase.textContent = 'Case #';
                 headerWho.textContent = 'Who';
@@ -373,22 +492,22 @@
                 // Case 2 in English
                 case2Who.innerHTML = 'Individuals of Developed Countries';
                 case2Usecase.innerHTML = '②Store of Value<br>③Inflation Hedge';
-                case2Utility.innerHTML = 'Long Term Returns<br>●Scarcity<br>●Durability';
+                case2Utility.innerHTML = 'Long Term Returns<br><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br>●Durability';
                 
                 // Case 3 in English
                 case3Who.innerHTML = 'Investors of Authoritarian Regimes';
                 case3Usecase.innerHTML = '①Speculation<br>②Store of Value<br>③Inflation Hedge<br>④Asset Protection';
-                case3Utility.innerHTML = 'Volatility<br>Long Term Returns<br>●Scarcity<br>●Durability<br>★Seizure Resistant';
+                case3Utility.innerHTML = 'Volatility<br>Long Term Returns<br><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br>●Durability<br>★Seizure Resistant';
                 
                 // Case 4 in English
                 case4Who.innerHTML = 'Individuals of Authoritarian Regimes';
                 case4Usecase.innerHTML = '②Store of Value<br>③Inflation Hedge<br>④Asset Protection<br>⑤Payments';
-                case4Utility.innerHTML = 'Long Term Returns<br>●Scarcity<br>●Durability<br>★Seizure Resistant<br>★Censorship Resistant';
+                case4Utility.innerHTML = 'Long Term Returns<br><span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br>●Durability<br>★Seizure Resistant<br>★Censorship Resistant';
                 
                 // Case 5 in English
                 case5Who.innerHTML = 'Individuals of Third World Countries';
                 case5Usecase.innerHTML = '②Store of Value<br>③Inflation Hedge<br>④Asset Protection<br>⑤Payments<br>⑥Financial Infrastructure';
-                case5Utility.innerHTML = '●Scarcity<br>●Durability<br>★Seizure Resistant<br>★Censorship Resistant<br>★Global<br>★Digital<br>★24-7-365';
+                case5Utility.innerHTML = '<span class="clickable-property" onclick="openPropertiesModal()">●Scarcity</span><br>●Durability<br>★Seizure Resistant<br>★Censorship Resistant<br>★Global<br>★Digital<br>★24-7-365';
                 
                 // Case 6 in English
                 case6Who.innerHTML = 'Disaster Refugees';
@@ -411,6 +530,18 @@
                 pageTitleText.textContent = 'ビットコインとは何か？(初級編)';
                 contentText.innerHTML = 'ビットコインを非常に簡単な言葉で説明するのは難しいです。それは、異なる状況において、異なる人々にとって異なるものになり得ます。仮想通貨、暗号資産、デジタルゴールド等様々な言葉で表現されてきました。以下ではまず、初級編としてビットコインの若い歴史の中で出現した一般的なユースケースとユーティリティのいくつかを説明します。その後にお金とは何か（中級編）、ビットコインが成しえた進化（上級編）、なぜビットコインなのか（上級編）を解説していいきます。<br>●は本来のお金に求める性質、★はビットコインが成しえた進化を指します。';
                 backBtn.textContent = '← 戻る';
+                
+                // Modal content in Japanese
+                modalTitle.textContent = 'お金の望ましい性質';
+                modalList.innerHTML = `
+                    <li><strong>希少性:</strong> 価値を維持するための供給の制限</li>
+                    <li><strong>耐久性:</strong> 繰り返しの使用に耐える能力</li>
+                    <li><strong>携帯性:</strong> 輸送と移転が容易</li>
+                    <li><strong>分割可能性:</strong> より小さな単位に分割できる</li>
+                    <li><strong>代替性:</strong> 各単位が交換可能</li>
+                    <li><strong>認識可能性:</strong> 識別と検証が容易</li>
+                    <li><strong>安定性:</strong> 時間とともに価値を維持</li>
+                `;
                 
                 // Table headers in Japanese
                 headerCase.textContent = 'ケース番号';
@@ -436,22 +567,22 @@
                 // Case 2 in Japanese
                 case2Who.innerHTML = '先進国の一般人';
                 case2Usecase.innerHTML = '②価値保存<br>③インフレヘッジ';
-                case2Utility.innerHTML = '長期リターン<br>●希少性<br>●耐久性';
+                case2Utility.innerHTML = '長期リターン<br><span class="clickable-property" onclick="openPropertiesModal()">●希少性</span><br>●耐久性';
                 
                 // Case 3 in Japanese
                 case3Who.innerHTML = '独裁・監視国家の投資家';
                 case3Usecase.innerHTML = '①投機目的<br>②価値保存<br>③インフレヘッジ<br>④資産保護';
-                case3Utility.innerHTML = 'ボラティリティ<br>長期リターン<br>●希少性<br>●耐久性<br>★押収不可';
+                case3Utility.innerHTML = 'ボラティリティ<br>長期リターン<br><span class="clickable-property" onclick="openPropertiesModal()">●希少性</span><br>●耐久性<br>★押収不可';
                 
                 // Case 4 in Japanese
                 case4Who.innerHTML = '独裁・監視国家の一般人';
                 case4Usecase.innerHTML = '②価値保存<br>③インフレヘッジ<br>④資産保護<br>⑤決済';
-                case4Utility.innerHTML = '長期リターン<br>●希少性<br>●耐久性<br>★押収不可<br>★検閲不可';
+                case4Utility.innerHTML = '長期リターン<br><span class="clickable-property" onclick="openPropertiesModal()">●希少性</span><br>●耐久性<br>★押収不可<br>★検閲不可';
                 
                 // Case 5 in Japanese
                 case5Who.innerHTML = '発展途上国の一般人';
                 case5Usecase.innerHTML = '②価値保存<br>③インフレヘッジ<br>④資産保護<br>⑤決済<br>⑥金融インフラ';
-                case5Utility.innerHTML = '●希少性<br>●耐久性<br>★押収不可<br>★検閲不可<br>★Global<br>★Digital<br>★24-7-365';
+                case5Utility.innerHTML = '<span class="clickable-property" onclick="openPropertiesModal()">●希少性</span><br>●耐久性<br>★押収不可<br>★検閲不可<br>★Global<br>★Digital<br>★24-7-365';
                 
                 // Case 6 in Japanese
                 case6Who.innerHTML = '災害の被災者';
