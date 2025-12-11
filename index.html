@@ -60,7 +60,7 @@
             padding-top: 0.07em;
         }
         .banner-title.jp {
-            font-size: 0.8em; /* Smaller font for Japanese */
+            font-size: 0.8em;
         }
         .lang-btn {
             flex-shrink: 0;
@@ -81,7 +81,6 @@
             z-index: 1;
             max-width: 8em;
             box-sizing: border-box;
-            /* Prevent overflow */
             overflow: hidden;
             white-space: nowrap;
         }
@@ -120,8 +119,8 @@
         /* Hide all links and line breaks that come after the "Bitcoin Bible" link
            visually while keeping the source HTML intact. This uses the general
            sibling selector to target following <a> and <br> elements. */
-        .link-container #bible-link ~ a,
-        .link-container #bible-link ~ br {
+        .link-container #what-is-link ~ a,
+        .link-container #what-is-link ~ br {
             display: none !important;
         }
     </style>
@@ -143,12 +142,7 @@
     </div>
     <div style="margin-top: 40vh;"></div>
     <div class="link-container">
-        <!--
-        <a id="pow-link" href="pow.html">Learn about Proof of Work</a>
-        <br><br>
-        -->
         <a id="what-is-link" href="what-is-bitcoin.html">What is Bitcoin?</a>
-        <!--
         <br><br>
         <a id="history-link" href="history-of-money.html">The History of Money</a>
         <br><br>
@@ -163,11 +157,8 @@
         <a id="economics-link" href="economics-of-bitcoin.html">The Economics of Bitcoin (Coming Soon)</a>
         <br><br>
         <a id="why-link" href="why-bitcoin-wins.html">Why Bitcoin Wins (Coming Soon)</a>
-        -->
-        <!--
         <br><br>
         <a id="notes-link" href="notes.html">Notes</a>
-        -->
     </div>
     <script src="btc-price.js"></script>
     <!--
@@ -190,7 +181,6 @@
     <script>
         const bannerTitle = document.getElementById('banner-title');
         const langBtn = document.getElementById('lang-btn');
-        // Only define powLink if it exists
         const powLink = document.getElementById('pow-link');
         let isEnglish = true;
         const whatisLink = document.getElementById('what-is-link');
@@ -232,6 +222,5 @@
             }
         });
     </script>
-    <!-- Removed duplicate POW link -->
 </body>
 </html>
