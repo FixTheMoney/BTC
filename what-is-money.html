@@ -122,6 +122,43 @@
             margin: 1.5em 0;
             border-radius: 4px;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2em 0;
+            font-size: 1.1em;
+        }
+        th {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 0.8em;
+            text-align: center;
+            font-weight: bold;
+            color: #222;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 0.8em;
+            text-align: center;
+        }
+        td:first-child {
+            text-align: left;
+            font-weight: bold;
+            background: #fafafa;
+        }
+        .symbol {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        .circle {
+            color: #00aa00;
+        }
+        .triangle {
+            color: #ff9900;
+        }
+        .x {
+            color: #cc0000;
+        }
     </style>
 </head>
 <body>
@@ -146,28 +183,98 @@
                 <li><strong>Store of Value:</strong> Money allows us to save purchasing power for the future. We can earn money today and spend it tomorrow, next month, or next year.</li>
             </ul>
 
-            <h2>The Evolution of Money</h2>
-            <p>Throughout history, many different things have been used as money:</p>
-            <ul>
-                <li><strong>Commodity Money:</strong> Shells, salt, cattle, and other physical goods</li>
-                <li><strong>Precious Metals:</strong> Gold and silver coins backed by their intrinsic value</li>
-                <li><strong>Paper Money:</strong> Initially backed by gold (gold standard), later by government decree</li>
-                <li><strong>Fiat Currency:</strong> Modern government-issued money with no intrinsic value</li>
-                <li><strong>Digital Money:</strong> Electronic representations of fiat currency</li>
-                <li><strong>Cryptocurrency:</strong> Bitcoin and other decentralized digital currencies</li>
-            </ul>
+            <h2>The Evolution of Money and Its Properties</h2>
+            <p>Throughout history, different forms of money have possessed varying degrees of the ideal properties:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Commodities<br>(Shells, Salt)</th>
+                        <th>Precious Metals<br>(Gold, Silver)</th>
+                        <th>Paper Money<br>(Gold Standard)</th>
+                        <th>Fiat Currency<br>(Modern)</th>
+                        <th>Digital Fiat<br>(Bank Accounts)</th>
+                        <th>Bitcoin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Scarcity</td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Durability</td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Portability</td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Fungibility</td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Divisibility</td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Verifiability</td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Censorship Resistance</td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Seizure Resistance</td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <h2>Desirable Properties of Money</h2>
-            <p>For something to function well as money, it should ideally possess certain characteristics:</p>
-            <ul>
-                <li><strong>Scarcity:</strong> Limited supply to maintain value</li>
-                <li><strong>Durability:</strong> Ability to withstand physical wear and time</li>
-                <li><strong>Portability:</strong> Easy to transport and transfer</li>
-                <li><strong>Fungibility:</strong> Each unit is interchangeable with another</li>
-                <li><strong>Divisibility:</strong> Can be divided into smaller units</li>
-                <li><strong>Verifiability:</strong> Easy to authenticate as genuine</li>
-                <li><strong>Recognizability:</strong> Widely accepted and understood</li>
-            </ul>
+            <p><strong>Legend:</strong> <span class="symbol circle">●</span> = Excellent | <span class="symbol triangle">▲</span> = Moderate | <span class="symbol x">✕</span> = Poor</p>
 
             <div class="highlight">
                 <p><strong>💡 Key Insight:</strong> Money is a social technology that evolves over time. What serves as good money in one era may not be ideal for another. Bitcoin represents the next evolution—money designed for the digital age with properties optimized for a global, internet-connected world.</p>
@@ -187,28 +294,98 @@
                 <li><strong>価値保存手段：</strong> お金により、購買力を将来のために保存できます。今日稼いだお金を明日、来月、来年に使うことができます。</li>
             </ul>
 
-            <h2>お金の進化</h2>
-            <p>歴史を通じて、様々なものがお金として使われてきました：</p>
-            <ul>
-                <li><strong>商品貨幣：</strong> 貝殻、塩、家畜、その他の物理的商品</li>
-                <li><strong>貴金属：</strong> 本質的価値に裏付けられた金貨や銀貨</li>
-                <li><strong>紙幣：</strong> 当初は金に裏付けられ（金本位制）、後に政府の命令によって</li>
-                <li><strong>法定通貨：</strong> 本質的価値のない現代の政府発行通貨</li>
-                <li><strong>デジタルマネー：</strong> 法定通貨の電子的表現</li>
-                <li><strong>暗号通貨：</strong> ビットコインやその他の分散型デジタル通貨</li>
-            </ul>
+            <h2>お金の進化とその特性</h2>
+            <p>歴史を通じて、さまざまな形態のお金は理想的な特性をさまざまな程度で持っていました：</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>特性</th>
+                        <th>商品<br>(貝殻、塩)</th>
+                        <th>貴金属<br>(金、銀)</th>
+                        <th>紙幣<br>(金本位制)</th>
+                        <th>法定通貨<br>(現代)</th>
+                        <th>デジタル法定通貨<br>(銀行口座)</th>
+                        <th>ビットコイン</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>希少性</td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>耐久性</td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>携帯性</td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>代替性</td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>分割性</td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>検証可能性</td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>検閲耐性</td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>押収耐性</td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol triangle">▲</span></td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol x">✕</span></td>
+                        <td><span class="symbol circle">●</span></td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <h2>理想的なお金の特性</h2>
-            <p>何かがお金として良く機能するためには、理想的には次の特性を持つべきです：</p>
-            <ul>
-                <li><strong>希少性：</strong> 価値を維持するための限られた供給</li>
-                <li><strong>耐久性：</strong> 物理的な摩耗や時間に耐える能力</li>
-                <li><strong>携帯性：</strong> 輸送や転送が容易</li>
-                <li><strong>代替性：</strong> 各単位が別の単位と交換可能</li>
-                <li><strong>分割性：</strong> より小さな単位に分割可能</li>
-                <li><strong>検証可能性：</strong> 本物として認証が容易</li>
-                <li><strong>認識性：</strong> 広く受け入れられ理解されている</li>
-            </ul>
+            <p><strong>凡例：</strong> <span class="symbol circle">●</span> = 優秀 | <span class="symbol triangle">▲</span> = 中程度 | <span class="symbol x">✕</span> = 劣る</p>
 
             <div class="highlight">
                 <p><strong>💡 重要な洞察：</strong> お金は時間とともに進化する社会的技術です。ある時代に良いお金として機能するものが、別の時代には理想的ではないかもしれません。ビットコインは次の進化を表します—グローバルでインターネットに接続された世界に最適化された特性を持つ、デジタル時代のために設計されたお金です。</p>
