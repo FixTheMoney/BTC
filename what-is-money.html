@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What is Money?</title>
+    <link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #ffffff;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        .banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.85);
+            color: #ffd700;
+            text-align: left;
+            padding: 1em 0 1em 2em;
+            font-size: 2em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            height: 3em;
+            box-sizing: border-box;
+        }
+        .banner-title {
+            margin-right: 1em;
+            line-height: 1em;
+            transition: font-size 0.2s;
+            flex-shrink: 0;
+            position: relative;
+            padding-top: 0.07em;
+        }
+        .banner-title.jp {
+            font-size: 0.8em;
+        }
+        .lang-btn {
+            flex-shrink: 0;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+            top: 1em;
+            background: #ffd700;
+            color: #222;
+            border: none;
+            border-radius: 4px;
+            padding: 0.2em 0.5em;
+            font-size: 0.6em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            transition: background 0.2s;
+            align-self: center;
+            z-index: 1;
+        }
+        .lang-btn:hover {
+            background: #ffed4e;
+        }
+        .back-btn {
+            flex-shrink: 0;
+            margin-right: 2em;
+            background: #ffd700;
+            color: #222;
+            border: none;
+            border-radius: 4px;
+            padding: 0.2em 0.5em;
+            font-size: 0.6em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            align-self: center;
+        }
+        .back-btn:hover {
+            background: #ffed4e;
+        }
+        .content {
+            margin-top: 5em;
+            padding: 2em;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            color: #222;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            color: #444;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+        ul {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-left: 2em;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+        .highlight {
+            background: #fff9e6;
+            padding: 1.5em;
+            border-left: 4px solid #ffd700;
+            margin: 1.5em 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <span class="banner-title" id="banner-title">What is Money?</span>
+        <div style="display: flex; gap: 0.5em;">
+            <button class="lang-btn" id="lang-btn">日本語</button>
+            <a href="index.html" class="back-btn" id="back-btn">Back</a>
+        </div>
+    </div>
+
+    <div class="content" id="content">
+        <!-- English Content -->
+        <div id="english-content">
+            <h1>What is Money?</h1>
+            
+            <p>Money is one of humanity's most important inventions. It serves as a medium of exchange, a unit of account, and a store of value. Understanding money is essential to understanding economics, society, and the financial system.</p>
+
+            <h2>The Three Functions of Money</h2>
+            <ul>
+                <li><strong>Medium of Exchange:</strong> Money allows us to trade goods and services without the need for direct barter. Instead of trading apples for oranges, we can sell apples for money and buy oranges with that money.</li>
+                <li><strong>Unit of Account:</strong> Money provides a common measure of value. Prices expressed in money allow us to compare the value of different goods and services.</li>
+                <li><strong>Store of Value:</strong> Money allows us to save purchasing power for the future. We can earn money today and spend it tomorrow, next month, or next year.</li>
+            </ul>
+
+            <h2>The Evolution of Money</h2>
+            <p>Throughout history, many different things have been used as money:</p>
+            <ul>
+                <li><strong>Commodity Money:</strong> Shells, salt, cattle, and other physical goods</li>
+                <li><strong>Precious Metals:</strong> Gold and silver coins backed by their intrinsic value</li>
+                <li><strong>Paper Money:</strong> Initially backed by gold (gold standard), later by government decree</li>
+                <li><strong>Fiat Currency:</strong> Modern government-issued money with no intrinsic value</li>
+                <li><strong>Digital Money:</strong> Electronic representations of fiat currency</li>
+                <li><strong>Cryptocurrency:</strong> Bitcoin and other decentralized digital currencies</li>
+            </ul>
+
+            <h2>Desirable Properties of Money</h2>
+            <p>For something to function well as money, it should ideally possess certain characteristics:</p>
+            <ul>
+                <li><strong>Scarcity:</strong> Limited supply to maintain value</li>
+                <li><strong>Durability:</strong> Ability to withstand physical wear and time</li>
+                <li><strong>Portability:</strong> Easy to transport and transfer</li>
+                <li><strong>Fungibility:</strong> Each unit is interchangeable with another</li>
+                <li><strong>Divisibility:</strong> Can be divided into smaller units</li>
+                <li><strong>Verifiability:</strong> Easy to authenticate as genuine</li>
+                <li><strong>Recognizability:</strong> Widely accepted and understood</li>
+            </ul>
+
+            <div class="highlight">
+                <p><strong>💡 Key Insight:</strong> Money is a social technology that evolves over time. What serves as good money in one era may not be ideal for another. Bitcoin represents the next evolution—money designed for the digital age with properties optimized for a global, internet-connected world.</p>
+            </div>
+
+            <h2>The Problem with Fiat Money</h2>
+            <p>Modern fiat currencies face several challenges:</p>
+            <ul>
+                <li><strong>Inflation:</strong> Central banks can print unlimited amounts, reducing purchasing power</li>
+                <li><strong>Centralization:</strong> Governments and banks control the money supply</li>
+                <li><strong>Censorship:</strong> Transactions can be blocked or reversed</li>
+                <li><strong>Debasement:</strong> Currency value can be diluted by increasing supply</li>
+            </ul>
+
+            <p>These issues motivated the creation of Bitcoin—a new form of money designed to address the shortcomings of traditional currencies.</p>
+        </div>
+
+        <!-- Japanese Content -->
+        <div id="japanese-content" style="display: none;">
+            <h1>お金とは何か？</h1>
+            
+            <p>お金は人類の最も重要な発明の一つです。交換手段、価値尺度、価値保存手段として機能します。お金を理解することは、経済、社会、金融システムを理解するために不可欠です。</p>
+
+            <h2>お金の3つの機能</h2>
+            <ul>
+                <li><strong>交換手段：</strong> お金により、直接物々交換をする必要なく商品やサービスを交換できます。リンゴをオレンジと交換する代わりに、リンゴをお金で売り、そのお金でオレンジを買うことができます。</li>
+                <li><strong>価値尺度：</strong> お金は共通の価値の尺度を提供します。お金で表された価格により、異なる商品やサービスの価値を比較できます。</li>
+                <li><strong>価値保存手段：</strong> お金により、購買力を将来のために保存できます。今日稼いだお金を明日、来月、来年に使うことができます。</li>
+            </ul>
+
+            <h2>お金の進化</h2>
+            <p>歴史を通じて、様々なものがお金として使われてきました：</p>
+            <ul>
+                <li><strong>商品貨幣：</strong> 貝殻、塩、家畜、その他の物理的商品</li>
+                <li><strong>貴金属：</strong> 本質的価値に裏付けられた金貨や銀貨</li>
+                <li><strong>紙幣：</strong> 当初は金に裏付けられ（金本位制）、後に政府の命令によって</li>
+                <li><strong>法定通貨：</strong> 本質的価値のない現代の政府発行通貨</li>
+                <li><strong>デジタルマネー：</strong> 法定通貨の電子的表現</li>
+                <li><strong>暗号通貨：</strong> ビットコインやその他の分散型デジタル通貨</li>
+            </ul>
+
+            <h2>理想的なお金の特性</h2>
+            <p>何かがお金として良く機能するためには、理想的には次の特性を持つべきです：</p>
+            <ul>
+                <li><strong>希少性：</strong> 価値を維持するための限られた供給</li>
+                <li><strong>耐久性：</strong> 物理的な摩耗や時間に耐える能力</li>
+                <li><strong>携帯性：</strong> 輸送や転送が容易</li>
+                <li><strong>代替性：</strong> 各単位が別の単位と交換可能</li>
+                <li><strong>分割性：</strong> より小さな単位に分割可能</li>
+                <li><strong>検証可能性：</strong> 本物として認証が容易</li>
+                <li><strong>認識性：</strong> 広く受け入れられ理解されている</li>
+            </ul>
+
+            <div class="highlight">
+                <p><strong>💡 重要な洞察：</strong> お金は時間とともに進化する社会的技術です。ある時代に良いお金として機能するものが、別の時代には理想的ではないかもしれません。ビットコインは次の進化を表します—グローバルでインターネットに接続された世界に最適化された特性を持つ、デジタル時代のために設計されたお金です。</p>
+            </div>
+
+            <h2>法定通貨の問題</h2>
+            <p>現代の法定通貨はいくつかの課題に直面しています：</p>
+            <ul>
+                <li><strong>インフレーション：</strong> 中央銀行は無制限に印刷でき、購買力を減少させます</li>
+                <li><strong>中央集権化：</strong> 政府と銀行が通貨供給を管理します</li>
+                <li><strong>検閲：</strong> 取引をブロックまたは取り消すことができます</li>
+                <li><strong>価値の低下：</strong> 供給を増やすことで通貨価値を希釈できます</li>
+            </ul>
+
+            <p>これらの問題が、伝統的な通貨の欠点に対処するために設計された新しい形態のお金であるビットコインの創造を動機付けました。</p>
+        </div>
+    </div>
+
+    <script src="btc-price.js"></script>
+    <script>
+        const langBtn = document.getElementById('lang-btn');
+        const bannerTitle = document.getElementById('banner-title');
+        const backBtn = document.getElementById('back-btn');
+        const englishContent = document.getElementById('english-content');
+        const japaneseContent = document.getElementById('japanese-content');
+        
+        let isEnglish = true;
+
+        langBtn.addEventListener('click', () => {
+            isEnglish = !isEnglish;
+            if (isEnglish) {
+                bannerTitle.textContent = 'What is Money?';
+                bannerTitle.classList.remove('jp');
+                langBtn.textContent = '日本語';
+                backBtn.textContent = 'Back';
+                englishContent.style.display = 'block';
+                japaneseContent.style.display = 'none';
+            } else {
+                bannerTitle.textContent = 'お金とは何か？';
+                bannerTitle.classList.add('jp');
+                langBtn.textContent = 'English';
+                backBtn.textContent = '戻る';
+                englishContent.style.display = 'none';
+                japaneseContent.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
