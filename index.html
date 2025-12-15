@@ -116,13 +116,6 @@
             0% { transform: translateX(10%);}
             100% { transform: translateX(-100%);}
         }
-        /* Hide all links and line breaks that come after the "What is Money" link
-           visually while keeping the source HTML intact. This uses the general
-           sibling selector to target following <a> and <br> elements. */
-        .link-container #money-power-link ~ a,
-        .link-container #money-power-link ~ br {
-            display: none !important;
-        }
     </style>
 </head>
 <body>
@@ -213,12 +206,12 @@
                 if (powLink) powLink.textContent = 'プルーフ・オブ・ワークについて学ぶ';
                 whatisLink.textContent = 'ビットコインとは何か？(初級編)';
                 moneyLink.textContent = 'お金とは何か？(初級編)';
-                moneyPowerLink.textContent = 'お金と権力';
-                whathappenedLink.textContent = '1971年に何が起こったか';
-                adventLink.textContent = 'ビットコインの登場';
-                techLink.textContent = 'ビットコインを支える技術';
-                economicsLink.textContent = 'ビットコインの経済学';
-                whyLink.textContent = 'なぜビットコインが勝つのか';
+                moneyPowerLink.textContent = 'お金と権力(初級編)';
+                whathappenedLink.textContent = '1971年に何が起こったか(中級編)(近代の紙幣制度)';
+                adventLink.textContent = 'ビットコインの登場(中級編)(ビットコインの思想・歴史)';
+                techLink.textContent = 'ビットコインを支える技術(上級編)';
+                economicsLink.textContent = 'ビットコインの経済学(上級編)';
+                whyLink.textContent = 'なぜビットコインが勝つのか(上級編)(草コインとの違い)';
             }
         });
     </script>
