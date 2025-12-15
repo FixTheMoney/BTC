@@ -158,7 +158,15 @@
     
     <div class="content-section">
         <h2 id="page-title">Money and Power</h2>
-        <p id="content-text">Content coming soon...</p>
+        <p id="content-text">Throughout history, control over money has been one of the most powerful tools of governance and social control. Those who control the creation, distribution, and regulation of money hold immense influence over economies, societies, and individual lives.</p>
+        
+        <p id="content-para1">In ancient times, rulers stamped their faces on coins, asserting their authority over commerce and trade. This tradition continues today with government-issued fiat currencies, where central banks and governments maintain monopolistic control over monetary policy.</p>
+        
+        <p id="content-para2">The ability to print money, set interest rates, and regulate financial institutions gives governments extraordinary power to shape economic outcomes, redistribute wealth, and even finance wars. This power can be used for public good, but history shows it is often abused through inflation, confiscation, and financial repression.</p>
+        
+        <p id="content-para3">Bitcoin represents a fundamental challenge to this traditional power structure. As a decentralized, permissionless monetary system, it operates outside the control of any government or institution. For the first time in modern history, individuals can store and transfer value without requiring permission from financial intermediaries or state authorities.</p>
+        
+        <p id="content-para4">This separation of money and state has profound implications. It limits government's ability to debase currency through inflation, confiscate wealth, or exclude individuals from the financial system. While governments retain many tools of power, Bitcoin removes one of their most fundamental: the monopoly on money.</p>
     </div>
     
     <a href="index.html" class="back-btn" id="back-btn">← Back</a>
@@ -169,6 +177,10 @@
         const langBtn = document.getElementById('lang-btn');
         const pageTitle = document.getElementById('page-title');
         const contentText = document.getElementById('content-text');
+        const contentPara1 = document.getElementById('content-para1');
+        const contentPara2 = document.getElementById('content-para2');
+        const contentPara3 = document.getElementById('content-para3');
+        const contentPara4 = document.getElementById('content-para4');
         const backBtn = document.getElementById('back-btn');
         let isEnglish = true;
 
@@ -179,14 +191,22 @@
                 bannerTitle.classList.remove('jp');
                 langBtn.textContent = '日本語';
                 pageTitle.textContent = 'Money and Power';
-                contentText.textContent = 'Content coming soon...';
+                contentText.textContent = 'Throughout history, control over money has been one of the most powerful tools of governance and social control. Those who control the creation, distribution, and regulation of money hold immense influence over economies, societies, and individual lives.';
+                contentPara1.textContent = 'In ancient times, rulers stamped their faces on coins, asserting their authority over commerce and trade. This tradition continues today with government-issued fiat currencies, where central banks and governments maintain monopolistic control over monetary policy.';
+                contentPara2.textContent = 'The ability to print money, set interest rates, and regulate financial institutions gives governments extraordinary power to shape economic outcomes, redistribute wealth, and even finance wars. This power can be used for public good, but history shows it is often abused through inflation, confiscation, and financial repression.';
+                contentPara3.textContent = 'Bitcoin represents a fundamental challenge to this traditional power structure. As a decentralized, permissionless monetary system, it operates outside the control of any government or institution. For the first time in modern history, individuals can store and transfer value without requiring permission from financial intermediaries or state authorities.';
+                contentPara4.textContent = 'This separation of money and state has profound implications. It limits government\'s ability to debase currency through inflation, confiscate wealth, or exclude individuals from the financial system. While governments retain many tools of power, Bitcoin removes one of their most fundamental: the monopoly on money.';
                 backBtn.textContent = '← Back';
             } else {
                 bannerTitle.textContent = 'ビットコイン';
                 bannerTitle.classList.add('jp');
                 langBtn.textContent = 'English';
                 pageTitle.textContent = 'お金と権力';
-                contentText.textContent = 'コンテンツは近日公開予定...';
+                contentText.textContent = '歴史を通じて、お金の支配は統治と社会統制の最も強力な手段の一つでした。お金の創造、分配、規制を支配する者は、経済、社会、そして個人の生活に対して計り知れない影響力を持っています。';
+                contentPara1.textContent = '古代では、支配者は硬貨に自分の顔を刻印し、商業と貿易に対する権威を主張しました。この伝統は今日も政府発行の法定通貨で続いており、中央銀行と政府は金融政策に対する独占的な支配を維持しています。';
+                contentPara2.textContent = 'お金を印刷し、金利を設定し、金融機関を規制する能力は、政府に経済的成果を形作り、富を再分配し、さらには戦争に資金を提供する並外れた力を与えます。この力は公共の利益のために使用できますが、歴史はそれがしばしばインフレ、没収、金融抑圧を通じて濫用されることを示しています。';
+                contentPara3.textContent = 'ビットコインは、この伝統的な権力構造に対する根本的な挑戦を表しています。分散型で許可不要な通貨システムとして、それはいかなる政府や機関の支配からも外れて運営されます。近代史上初めて、個人は金融仲介者や国家当局からの許可を必要とせずに価値を保管し移転できます。';
+                contentPara4.textContent = 'このお金と国家の分離は深い意味を持ちます。それは政府がインフレを通じて通貨を切り下げたり、富を没収したり、個人を金融システムから排除したりする能力を制限します。政府は多くの権力の手段を保持していますが、ビットコインは最も基本的なものの一つ、つまりお金の独占を取り除きます。';
                 backBtn.textContent = '← 戻る';
             }
         });
